@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\film;
 use Illuminate\Http\Request;
 
 class FilmController extends Controller
@@ -10,6 +11,10 @@ class FilmController extends Controller
         "http://www.omdbapi.com/?apikey=c585f45d&t=";
 
     public function find($title, Request $request) {
+
+       if(film::checkFilm($title)) {
+           return 'Film in DB';
+       }
 
         $defaults = array(
             CURLOPT_URL => $this->URL_SITE . $title, // куда идем
@@ -22,6 +27,7 @@ class FilmController extends Controller
         curl_setopt_array($ch, $defaults);
         $film_data = json_decode(curl_exec($ch), true);
         curl_close($ch);
+        film::createFromJson($film_data);
         return $film_data['Title'] . " " . $film_data['Year'];
     }
 }
