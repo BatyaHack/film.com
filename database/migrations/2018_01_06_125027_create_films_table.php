@@ -17,6 +17,7 @@ class CreateFilmsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->integer('year');
+            // $table->unique(['title', 'year'], 'id_film'); ???
             $table->string('rated')->nullable();
             $table->date('released')->nullable();
             $table->integer('runtime')->nullable();
