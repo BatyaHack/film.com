@@ -13,8 +13,11 @@ class FilmController extends Controller
     public function find($title, Request $request) {
 
        if(film::checkFilm($title)) {
-           return 'Film in DB';
+           // TODO Отправлять тот фильм, который нашел при проверке. Опять же поправить checkFilm
+           return "Film in DB";
        }
+
+        $title = $this->toCorrectUrl($title);
 
         $defaults = array(
             CURLOPT_URL => $this->URL_SITE . $title, // куда идем
@@ -28,6 +31,16 @@ class FilmController extends Controller
         $film_data = json_decode(curl_exec($ch), true);
         curl_close($ch);
         film::createFromJson($film_data);
-        return $film_data['Title'] . " " . $film_data['Year'];
+        // TODO Отправлять только что созданный эллмент. Для этого нужно поправить createFromJson
+        return "OK";
+
+        // TODO Наверное, нужно сделать какой то ответ, если я вообще ничего не нашел!
+    }
+
+
+    private function toCorrectUrl($title) {
+        $correct_title = trim($title);
+        $correct_title_array = explode(" ", $correct_title);
+        return implode("+", $correct_title_array);
     }
 }
