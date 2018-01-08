@@ -2,45 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\CoreApp\ApiRequest;
 use App\film;
+use Error;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class FilmController extends Controller
 {
     private $URL_SITE =
         "http://www.omdbapi.com/?apikey=c585f45d&t=";
 
-    public function find($title, Request $request) {
+    public function find($title, Request $request, ApiRequest $api_Request)
+    {
 
-       if(film::checkFilm($title)) {
-           // TODO Отправлять тот фильм, который нашел при проверке. Опять же поправить checkFilm
-           return "Film in DB";
-       }
+        try {
+            if ($find_filmDb = film::checkFilm($title)) {
+                return $find_filmDb;
+            }
 
-        $title = $this->toCorrectUrl($title);
+            $film_data = $api_Request->executeApi($title);
 
-        $defaults = array(
-            CURLOPT_URL => $this->URL_SITE . $title, // куда идем
-            CURLOPT_HEADER => 0, // заголовки
-            CURLOPT_RETURNTRANSFER => TRUE, // вернуть контент, а не инфу удачно не удачно
-            CURLOPT_TIMEOUT => 4 // время которое ждем
-        );
+            $poster_path = $this->save($film_data["Poster"]);
+            $new_film = film::createFromJson($film_data, $poster_path);
+            return $new_film;
 
-        $ch = curl_init();
-        curl_setopt_array($ch, $defaults);
-        $film_data = json_decode(curl_exec($ch), true);
-        curl_close($ch);
-        film::createFromJson($film_data);
-        // TODO Отправлять только что созданный эллмент. Для этого нужно поправить createFromJson
-        return "OK";
-
-        // TODO Наверное, нужно сделать какой то ответ, если я вообще ничего не нашел!
+        } catch (Error $ex) {
+            return response()->json([
+                "error_title" => "Что то пошло не так",
+                "error_message" => $ex->getMessage(),
+            ], 500);
+        }
     }
 
-
-    private function toCorrectUrl($title) {
-        $correct_title = trim($title);
-        $correct_title_array = explode(" ", $correct_title);
-        return implode("+", $correct_title_array);
+    protected function save($url)
+    {
+        $path = "./img/" . Str::random(32) . ".jpg";
+        file_put_contents($path, file_get_contents($url));
+        return $path;
     }
 }

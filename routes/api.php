@@ -14,7 +14,8 @@ use Illuminate\Http\Request;
 */
 
 Route::get('find/{title}', 'FilmController@find');
+Route::get('save', 'FilmController@save');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});

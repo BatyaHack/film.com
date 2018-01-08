@@ -2,6 +2,7 @@
 
 namespace App;
 
+use ErrorException;
 use Illuminate\Database\Eloquent\Model;
 
 class film extends Model
@@ -9,26 +10,36 @@ class film extends Model
     protected $guarded = []; // разрешим масовое заполнение
 
     // правильно ли распологать этот метод в модели???
-    public static function createFromJson($dataJson) {
+    public static function createFromJson($dataJson, $poster_path)
+    {
 
         preg_match("/\d+/", $dataJson["Runtime"], $matches);
 
-        film::create([
-            "title" => $dataJson["Title"],
-            "year" => (integer)$dataJson["Year"],
-            "rated" => $dataJson["Rated"],
-            "released" => date("Y-m-d H:i:s", strtotime($dataJson["Released"])),
+        return film::create([
+            "title" => self::checkIndex($dataJson, "Title"),
+            "year" => (integer) self::checkIndex($dataJson, "Year"),
+            "rated" => self::checkIndex($dataJson, "Rated"),
+            "released" => date("Y-m-d H:i:s", strtotime(self::checkIndex($dataJson, "Released"))),
             "runtime" => (integer)$matches[0],
-            "director" => $dataJson["Director"],
-            "awards" => $dataJson["Awards"],
-            "other_rating" => json_encode($dataJson["Ratings"]),
-            "path_to_poster" => "",
-            "imdb_rating" => (double)$dataJson["imdbRating"],
-            // "other_rating" => $dataJson["Ratings"]
+            "director" => self::checkIndex($dataJson, "Director"),
+            "awards" => self::checkIndex($dataJson, "Awards"),
+            "other_rating" => json_encode(self::checkIndex($dataJson, "Ratings")),
+            "path_to_poster" => $poster_path,
+            "imdb_rating" => (double)self::checkIndex($dataJson, "imdbRating"),
         ]);
     }
 
-    public static function checkFilm($title) {
+    // по мне это тупо дичь, которую надо исправить
+    private static function checkIndex($array, $index) {
+        try {
+            return $array[$index];
+        } catch (ErrorException $ex) {
+            return null;
+        }
+    }
+
+    public static function checkFilm($title)
+    {
         return $film_name = film::where('title', $title)->first();
     }
 }

@@ -55,6 +55,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'img' => [
+            'driver' => 'local',
+            'root' => storage_path('../public/img'), // url по которому мы ложем контент
+            'url' => env('APP_URL').'/img', // url по которому происходит доступ
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),
