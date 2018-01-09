@@ -13,6 +13,7 @@ class FilmController extends Controller
     private $URL_SITE =
         "http://www.omdbapi.com/?apikey=c585f45d&t=";
 
+    // TODO не опасно ли доверять пользователю отпавку title? Или стоит как то его обработать
     public function find($title, Request $request, ApiRequest $api_Request)
     {
 
@@ -35,6 +36,34 @@ class FilmController extends Controller
         }
     }
 
+    public function index()
+    {
+        return film::all();
+    }
+
+    public function show(film $film)
+    {
+        return $film;
+    }
+
+    public function delete(film $film) {
+        $film->delete();
+        return response()->json('', 200);
+    }
+
+    public function update(Request $request, film $film) {
+        $film_edit_flag = $film->update($request->all());
+        return $film_edit_flag ? $film : response()->json([
+            'error_message' => 'Film not update',
+            'error_title' => 'Мы не смогли обновить фильм'
+        ], 500);
+    }
+
+    public function created(Request $request) {
+        return film::create($request->all());
+    }
+
+    // TODO Может вынести эту функцию куда-то?
     protected function save($url)
     {
         $path = "./img/" . Str::random(32) . ".jpg";

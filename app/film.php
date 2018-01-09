@@ -17,7 +17,7 @@ class film extends Model
 
         return film::create([
             "title" => self::checkIndex($dataJson, "Title"),
-            "year" => (integer) self::checkIndex($dataJson, "Year"),
+            "year" => (integer)self::checkIndex($dataJson, "Year"),
             "rated" => self::checkIndex($dataJson, "Rated"),
             "released" => date("Y-m-d H:i:s", strtotime(self::checkIndex($dataJson, "Released"))),
             "runtime" => (integer)$matches[0],
@@ -29,13 +29,9 @@ class film extends Model
         ]);
     }
 
-    // по мне это тупо дичь, которую надо исправить
-    private static function checkIndex($array, $index) {
-        try {
-            return $array[$index];
-        } catch (ErrorException $ex) {
-            return null;
-        }
+    private static function checkIndex($array, $index)
+    {
+        return $array[$index] ?? null;
     }
 
     public static function checkFilm($title)

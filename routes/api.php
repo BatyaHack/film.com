@@ -13,9 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('find/{title}', 'FilmController@find');
-Route::get('save', 'FilmController@save');
+Route::get('film/find/{title}', 'FilmController@find');
 
+Route::get('film/', 'FilmController@index');
+Route::get('film/{film}', 'FilmController@show');
+Route::delete('film/{film}', 'FilmController@delete');
+Route::put('film/{film}', 'FilmController@update');
+Route::post('film/', 'FilmController@created');
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
