@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }}123</h1>
     <h2>Essential Links</h2>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
@@ -24,8 +24,9 @@
 export default {
   name: 'HelloWorld',
   data () {
+    console.log(store);
     return {
-      msg: 'Hello, world'
+      msg: store.state.todos,
     }
   }
 }
