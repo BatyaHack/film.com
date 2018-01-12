@@ -18,7 +18,6 @@
   }
 </script>
 
-<!-- scoped ограничивает css только этим компонентом -->
-<style scoped lang="scss">
+<style lang="scss">
 
 </style>

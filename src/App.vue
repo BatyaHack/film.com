@@ -12,6 +12,8 @@ export default {
 
 <!--И вот тут мы должны писать глобальные стили! А не праиться со сборкой стилей-->
 
-<style>
+<style lang="scss">
+
+  @import "./style/_btn.scss";
 
 </style>
