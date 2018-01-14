@@ -1,9 +1,12 @@
 <template>
-  <top-bar/>
+  <section class="main-container">
+    <top-bar/>
+    <router-view></router-view>
+  </section>
 </template>
 
 <script>
-  import TopBar from '../components/TopBar.vue'
+  import TopBar from '../components/TobBar/TopBar.vue'
 
   export default {
     name: 'Index',
