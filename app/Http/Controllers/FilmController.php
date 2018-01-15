@@ -10,8 +10,9 @@ use Illuminate\Support\Str;
 
 class FilmController extends Controller
 {
-    private $URL_SITE =
+    const URL_SITE =
         "http://www.omdbapi.com/?apikey=c585f45d&t=";
+    const COUNT_ELEM = 10;
 
     // TODO не опасно ли доверять пользователю отпавку title? Или стоит как то его обработать
     public function find($title, Request $request, ApiRequest $api_Request)
@@ -36,8 +37,14 @@ class FilmController extends Controller
         }
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->p) {
+            $start_page = $request->p * self::COUNT_ELEM - self::COUNT_ELEM;
+            $end_page = $request->p * self::COUNT_ELEM;
+            return film::all()->slice($start_page, $end_page);
+        }
+
         return film::all();
     }
 
@@ -46,12 +53,14 @@ class FilmController extends Controller
         return $film;
     }
 
-    public function delete(film $film) {
+    public function delete(film $film)
+    {
         $film->delete();
         return response()->json('', 200);
     }
 
-    public function update(Request $request, film $film) {
+    public function update(Request $request, film $film)
+    {
         $film_edit_flag = $film->update($request->all());
         return $film_edit_flag ? $film : response()->json([
             'error_message' => 'Film not update',
@@ -59,7 +68,8 @@ class FilmController extends Controller
         ], 500);
     }
 
-    public function created(Request $request) {
+    public function created(Request $request)
+    {
         return film::create($request->all());
     }
 
