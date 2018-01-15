@@ -15,6 +15,6 @@ export default {
 <style lang="scss">
 
   @import "./style/_btn.scss";
-  @import "./style/reset.scss";
+  @import "./style/_reset.scss";
 
 </style>

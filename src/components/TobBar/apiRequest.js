@@ -7,29 +7,19 @@ import axios from 'axios';
  * @param {String} title
  * @return {String[]} Список фильмов
  */
-export async function sendRequestToListSearch(title) {
+export async function sendRequestToListSearch(title, page) {
 
   // Правильно ли?!
   if (checkLengthTitle(title)) return null;
 
   let someList = [];
 
-  return someList = await axios.get(API_LIST_FIND + title)
-    .then(data => {return getArrayFilms(data)})
+  return someList = await axios.get(API_LIST_FIND + title + '&page=' + page)
+    .then(data => { return data.data; })
     .catch(data => {
       throw data
     });
 
-}
-
-/**
- * Вернем список фильмов, которые пришли после поиска
- *
- * @param {Object} films
- * @return {Array} уже распаршенный список фильмов
- */
-function getArrayFilms(films) {
-  return films.data.Search;
 }
 
 /**

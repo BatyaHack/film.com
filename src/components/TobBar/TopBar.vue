@@ -11,11 +11,11 @@
 
       <button class="btn  find-form__btn">Найти</button>
 
-      <div class="find-form__autoselect-menu">
+      <div v-if="queryFromUser.length >= 3 && inputFocus"
+           class="find-form__autoselect-menu"
+           v-on:scroll="setCurrentPage($event)">
 
-        <ul
-          v-if="queryFromUser.length >= 3 && inputFocus"
-          class="find-form__autoselect-list">
+        <ul class="find-form__autoselect-list">
 
           <li
             v-for="(film, index) in listFindFilms" v-bind:key="index"
@@ -24,6 +24,7 @@
             <a href="#" class="find-form__autoselect-info">
 
               <img class="find-form__autoselect-img"
+                   v-show="film.Poster"
                    v-bind:src="film.Poster"
                    v-bind:atr='"img" + index'>
 
@@ -46,8 +47,6 @@
   import * as utils from '../../utils.js'
   import {sendRequestToListSearch} from './apiRequest.js'
 
-  var throtlingFlaf = '';
-
   export default {
     name: 'TopBar',
     data() {
@@ -55,15 +54,47 @@
         listFindFilms: [],
         queryFromUser: '',
         inputFocus: false,
+        currentPage: 1,
+        allPage: 0,
+        scrollElem: false,
+        scrollValue: 0,
       }
     },
     watch: {
       queryFromUser: function (val, oldVal) {
-        // вот из за этого тротлинга оно не работает так быстро как хотелось
-        // но что делать если у меня всеголишь 1000 запросов в день :с
         this.$throtling(() => {
-          sendRequestToListSearch(val).then(data => this.listFindFilms = data);
+          this.getListFilm(val);
         }, 1000);
+      }
+    },
+    methods: {
+      setCurrentPage: function (evt) {
+
+        if(!this.checkScrollToBottom()) return null;
+
+        this.$throtling(() => {
+          this.currentPage = this.currentPage < this.allPage ? ++this.currentPage : 1;
+          console.log(this.currentPage);
+          this.getListFilm(this.queryFromUser, this.currentPage);
+        }, 1000);
+      },
+
+      getListFilm: function (partTitle, page = 1) {
+        sendRequestToListSearch(partTitle, page).then(data => {
+          this.allPage = data.totalResults;
+          this.listFindFilms = this.listFindFilms.concat(data.Search);
+        });
+      },
+
+      checkScrollToBottom: function () {
+
+        if (this.scrollValue < document.querySelector('.find-form__autoselect-menu').scrollTop) {
+          this.scrollValue = document.querySelector('.find-form__autoselect-menu').scrollTop;
+          return true;
+        } else {
+          return false;
+        }
+
       }
     }
   }
@@ -71,9 +102,15 @@
 
 <style lang="scss" scoped>
   .find-form {
+
+    position: relative;
+
     &__autoselect-menu {
+      position: absolute;
       max-width: 500px;
       min-width: 200px;
+      height: 400px;
+      overflow-y: scroll;
     }
 
     &__autoselect-list {
