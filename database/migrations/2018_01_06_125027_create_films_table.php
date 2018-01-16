@@ -25,9 +25,9 @@ class CreateFilmsTable extends Migration
             // Так же возможность актоеров через связные списки
             $table->string('director')->nullable();
             $table->string('awards')->nullable();
-            $table->string('path_to_poster')->nullable();
-            $table->double('imdb_rating', 4, 2)->nullable(); // всего 4 цифры, 2-ве после
-            $table->json('other_rating')->nullable();
+            $table->string('poster')->nullable();
+            $table->double('imdbrating', 4, 2)->nullable(); // всего 4 цифры, 2-ве после
+            $table->json('ratings')->nullable();
             $table->timestamps();
         });
     }
