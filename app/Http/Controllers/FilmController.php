@@ -21,11 +21,8 @@ class FilmController extends Controller
             if ($find_filmDb = film::checkFilm($title)) {
                 return $find_filmDb;
             }
-
             $film_data = $api_Request->executeApi($title);
-
-            $poster_path = $this->save($film_data["Poster"]);
-            $new_film = film::createFromJson($film_data, $poster_path);
+            $new_film = film::create($film_data);
             return $new_film;
 
         } catch (Error $ex) {
@@ -78,12 +75,7 @@ class FilmController extends Controller
     }
 
     // TODO Может вынести эту функции куда-то?
-    protected function save($url)
-    {
-        $path = "./img/" . Str::random(32) . ".jpg";
-        file_put_contents($path, file_get_contents($url));
-        return $path;
-    }
+
     protected function getImageColor($imageFile_URL, $numColors, $image_granularity = 5)
     {
         $image_granularity = max(1, abs((int)$image_granularity));
