@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('film/img', 'FilmController@testImage');
 Route::get('film/find/{title}', 'FilmController@find');
 
 Route::get('film/', 'FilmController@index');

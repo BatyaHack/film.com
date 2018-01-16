@@ -28,14 +28,20 @@ class film extends Model
             "imdb_rating" => (double)self::checkIndex($dataJson, "imdbRating"),
         ]);
     }
-
+    public static function checkFilm($title)
+    {
+        return $film_name = film::where('title', $title)->first();
+    }
     private static function checkIndex($array, $index)
     {
         return $array[$index] ?? null;
     }
 
-    public static function checkFilm($title)
-    {
-        return $film_name = film::where('title', $title)->first();
+
+    public static function boot() {
+        self::creating(function ($film) {
+            dd($film->attributes);
+            return false;
+        });
     }
 }
