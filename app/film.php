@@ -58,9 +58,10 @@ class film extends Model
 
     private static function saveImageToLocal($url)
     {
-        $path = "./img/" . Str::random(32) . ".jpg";
+        $file_name = Str::random(32);
+        $path = "./img/" . $file_name . ".jpg";
         file_put_contents($path, file_get_contents($url));
-        return $path;
+        return $file_name . ".jpg";
     }
 
     private static function getImageColor($imageFile_URL, $numColors, $image_granularity = 5)
