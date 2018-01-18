@@ -28,6 +28,8 @@ class CreateFilmsTable extends Migration
             $table->string('poster')->nullable();
             $table->double('imdbrating', 4, 2)->nullable(); // всего 4 цифры, 2-ве после
             $table->json('ratings')->nullable();
+            $table->string('imdbid')->nullable();
+            $table->string('poster_color')->nullable();
             $table->timestamps();
         });
     }
