@@ -26,6 +26,12 @@ class film extends Model
     {
         return $film_name = film::where("title", $title)->first();
     }
+
+    public static function checkFilmById($title)
+    {
+        return $film_name = film::where("imdbid", $title)->first();
+    }
+
     public static function boot() {
         self::creating(function ($film) {
             $film->attributes = array_change_key_case($film->attributes);

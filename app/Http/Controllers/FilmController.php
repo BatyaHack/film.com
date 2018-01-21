@@ -12,15 +12,27 @@ class FilmController extends Controller
 {
     const URL_SITE =
         "http://www.omdbapi.com/?apikey=c585f45d&t=";
-    const COUNT_ELEM = 10;
+    const COUNT_ELEM = 5;
 
     public function find($title, Request $request, ApiRequest $api_Request)
     {
 
         try {
+
+            if (preg_match('/tt\d{7}/', $title)) {
+                if ($find_filmDb_byID = film::checkFilmById($title)) {
+                    return $find_filmDb_byID;
+                } else {
+                    $film_data = $api_Request->executeApi($title, true);
+                    $new_film = film::create($film_data);
+                    return $new_film;
+                }
+            }
+
             if ($find_filmDb = film::checkFilm($title)) {
                 return $find_filmDb;
             }
+
             $film_data = $api_Request->executeApi($title);
             $new_film = film::create($film_data);
             return $new_film;
