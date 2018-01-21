@@ -65,12 +65,15 @@
         this.$throtling(() => {
           this.getListFilm(val);
         }, 1000);
+      },
+      inputFocus: function (val) {
+        val ? document.body.style.overflow = 'hidden' : document.body.style.overflow = '';
       }
     },
     methods: {
       setCurrentPage: function (evt) {
 
-        if(!this.checkScrollToBottom()) return null;
+        if(!this.$checkScrollToTop('.find-form__autoselect-menu')) return null;
 
         this.$throtling(() => {
           this.currentPage = this.currentPage < this.allPage ? ++this.currentPage : 1;
@@ -84,17 +87,6 @@
           this.allPage = data.totalResults;
           this.listFindFilms = this.listFindFilms.concat(data.Search);
         });
-      },
-
-      checkScrollToBottom: function () {
-
-        if (this.scrollValue < document.querySelector('.find-form__autoselect-menu').scrollTop) {
-          this.scrollValue = document.querySelector('.find-form__autoselect-menu').scrollTop;
-          return true;
-        } else {
-          return false;
-        }
-
       }
     }
   }

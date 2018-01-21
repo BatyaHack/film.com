@@ -14,8 +14,8 @@ Vue.use(VueMyUtils);
 
 new Vue({
   el: '#app',
-  router,
   store,
+  router,
   template: '<App/>',
   components: {App}
 });

@@ -13,5 +13,14 @@ export default {
       console.log(someText);
     };
 
+    Vue.prototype.$checkScrollToTop = function (elemToScroll) {
+      if (this.scrollValue < document.querySelector(elemToScroll).scrollTop) {
+        this.scrollValue = document.querySelector(elemToScroll).scrollTop;
+        return true;
+      } else {
+        return false;
+      }
+    }
+
   }
 }

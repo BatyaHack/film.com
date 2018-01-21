@@ -5,9 +5,12 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+
+  import {mapGetters} from 'vuex';
+
+  export default {
+    name: 'app',
+  }
 </script>
 
 <!--И вот тут мы должны писать глобальные стили! А не праиться со сборкой стилей-->

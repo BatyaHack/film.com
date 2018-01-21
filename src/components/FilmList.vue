@@ -1,13 +1,12 @@
 <template>
   <div>
     <h1>Заголовок чего то там!!!</h1>
-    <ul>
+    <ul class="list__wrapper">
       <li v-for="(film, index) in films" :key="index">
         <div :style="{
-          width: 100 + 'px',
-          height: 100 + 'px',
-          background: `#${film['poster_color']} url(${staticImg + film.poster})`,
-        }">
+          background: `#${film['poster_color']} url(${PATH_TO_IMG + film.poster})`,
+        }"
+             class="imgBackground">
 
         </div>
         {{film.title}}
@@ -19,27 +18,52 @@
 
 <script>
 
-  import {mapGetters} from 'vuex';
+  import {mapGetters, mapMutations} from 'vuex';
   import {API_MY_STATIC_PATH} from '@/config.js';
+  import * as mutationsTypes from '@/store/mutation-types.js';
+
 
   export default {
+    data() {
+      return {
+        PATH_TO_IMG: API_MY_STATIC_PATH,
+        scrollItem: false,
+        windowH: false,
+      }
+    },
     computed: mapGetters({
       films: 'allFilms'
     }),
-    data() {
-      return {
-        staticImg: API_MY_STATIC_PATH,
-      }
-    },
     created: function () {
       this.$store.dispatch('getAllFilms');
-      console.log(this.films);
+
+      document.addEventListener('scroll', (evt) => {
+        this.$throtling(() => {
+          if (this.scrollItem.getBoundingClientRect().bottom < this.windowH)
+          {
+            this.$store.commit(mutationsTypes['INCREMENT_CURRENT_PAGE']);
+            this.$store.dispatch('getAllFilms');
+          }
+
+        }, 1000);
+      })
     },
-    methods: {}
+    mounted: function () {
+      this.scrollItem = document.querySelector('.list__wrapper');
+      this.windowH = window.innerHeight;
+    }
   }
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scope>
+
+  .imgBackground {
+    width: 300px;
+    height: 400px;
+    background: url(http://topfilmsapi.com/public/img/lTIwt0Af4UEmXxbACNT4bCINgatfSScb.jpg) rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-position-y: top;
+  }
 
 </style>

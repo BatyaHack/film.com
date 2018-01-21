@@ -6,14 +6,17 @@ import axios from 'axios';
 // информация приложеия \ модуля
 const state = {
   all: [],
+  currentPage: 1,
 };
 
 // getters
 // обычно используется для возвращения состояний
 const getters = {
   allFilms: function (state) {
-    console.log(state);
     return state.all;
+  },
+  getCurrentPage: function (state) {
+    return state.currentPage;
   }
 };
 
@@ -24,10 +27,12 @@ const getters = {
 const actions = {
   getAllFilms({commit, state}) {
 
-    axios.get(API_MY_LIST)
+    axios.get(API_MY_LIST + state.currentPage)
       .then(data => { return data.data} )
-      .then(data => commit(types.SET_FILM_ITEMS, {items: data}))
-      .catch(console.log("Все пропало!"));
+      .then(data => {
+        commit(types.SET_FILM_ITEMS, {items: data});
+      })
+      .catch(err => console.log(err));
 
   }
 };
@@ -35,9 +40,15 @@ const actions = {
 // mutations
 // используется для изменения состояний. Не могуть быть асинхроными.
 const mutations = {
+
   [types.SET_FILM_ITEMS](state, {items}) {
-    state.all = items;
+    state.all = Object.assign({}, state.all, items);
+  },
+
+  [types.INCREMENT_CURRENT_PAGE](state) {
+    ++state.currentPage;
   }
+
 };
 
 export default {
