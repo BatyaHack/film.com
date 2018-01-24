@@ -3,13 +3,15 @@
     <h1>Заголовок чего то там!!!</h1>
     <ul class="list__wrapper">
       <li v-for="(film, index) in films" :key="index">
-        <div :style="{
-          background: `#${film['poster_color']} url(${PATH_TO_IMG + film.poster})`,
-        }"
-             class="imgBackground">
+        <router-link :to="{ name: 'film', params: { filmID: film.imdbid } }" class="list__link">
 
-        </div>
-        {{film.title}}
+          <div
+            :style=" { background: `#${film['poster_color']} url(${PATH_TO_IMG + film.poster})`} "
+            class="imgBackground"
+          >
+          </div>
+          <span>{{film.title}}</span>
+        </router-link>
       </li>
     </ul>
     <button @click.prevent="showFilmList">Дави</button>
@@ -39,8 +41,7 @@
 
       document.addEventListener('scroll', (evt) => {
         this.$throtling(() => {
-          if (this.scrollItem.getBoundingClientRect().bottom < this.windowH)
-          {
+          if (this.scrollItem.getBoundingClientRect().bottom < this.windowH) {
             this.$store.commit(mutationsTypes['INCREMENT_CURRENT_PAGE']);
             this.$store.dispatch('getAllFilms');
           }
@@ -64,6 +65,11 @@
     background: url(http://topfilmsapi.com/public/img/lTIwt0Af4UEmXxbACNT4bCINgatfSScb.jpg) rgb(0, 0, 0);
     background-repeat: no-repeat;
     background-position-y: top;
+  }
+
+  .list__link {
+    display: block;
+    cursor: pointer;
   }
 
 </style>

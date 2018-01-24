@@ -7,6 +7,7 @@ import axios from 'axios';
 const state = {
   all: [],
   currentPage: 1,
+  film: false,
 };
 
 // getters
@@ -17,6 +18,9 @@ const getters = {
   },
   getCurrentPage: function (state) {
     return state.currentPage;
+  },
+  getFilm: function (state) {
+    return state.film;
   }
 };
 
@@ -34,6 +38,23 @@ const actions = {
       })
       .catch(err => console.log(err));
 
+  },
+
+  getFilm({commit, state}, id) {
+
+    let film = {};
+
+    for(let i in state.all) {
+      if (state.all[i].imdbid === id) {
+        film = state.all[i];
+        // TODO: какой нибудь ретурн
+      } else {
+        // TODO: запрос к серваку по id
+      }
+    }
+
+    commit(types.SET_FILM, {film: film})
+
   }
 };
 
@@ -47,6 +68,10 @@ const mutations = {
 
   [types.INCREMENT_CURRENT_PAGE](state) {
     ++state.currentPage;
+  },
+
+  [types.SET_FILM](state, {film}) {
+    state.film = film;
   }
 
 };

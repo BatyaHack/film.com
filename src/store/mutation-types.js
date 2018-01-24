@@ -1,2 +1,3 @@
 export const SET_FILM_ITEMS = 'SET_FILM_ITEMS';
 export const INCREMENT_CURRENT_PAGE = 'INCREMENT_CURRENT_PAGE';
+export const SET_FILM = 'SET_FILM';
