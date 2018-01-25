@@ -1,5 +1,5 @@
 import * as types from '../mutation-types.js';
-import {API_MY_LIST} from '@/config.js';
+import {API_MY_LIST, API_MY_FIND_FILM} from '@/config.js';
 import axios from 'axios';
 
 // init state
@@ -32,7 +32,9 @@ const actions = {
   getAllFilms({commit, state}) {
 
     axios.get(API_MY_LIST + state.currentPage)
-      .then(data => { return data.data} )
+      .then(data => {
+        return data.data
+      })
       .then(data => {
         commit(types.SET_FILM_ITEMS, {items: data});
       })
@@ -42,18 +44,26 @@ const actions = {
 
   getFilm({commit, state}, id) {
 
-    let film = {};
+    let film = false;
 
-    for(let i in state.all) {
+    for (let i in state.all) {
       if (state.all[i].imdbid === id) {
         film = state.all[i];
-        // TODO: какой нибудь ретурн
-      } else {
-        // TODO: запрос к серваку по id
+        commit(types.SET_FILM, {film: film});
+        return null;
       }
     }
 
-    commit(types.SET_FILM, {film: film})
+    if(!film) {
+      axios.get(API_MY_FIND_FILM + id)
+        .then(data => {
+          return data.data
+        })
+        .then(data => {
+          commit(types.SET_FILM, {film: data});
+        })
+        .catch(err => console.log(err));
+    }
 
   }
 };

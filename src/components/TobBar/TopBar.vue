@@ -1,7 +1,6 @@
 <template>
   <section>
-    <form action="#" class="find-form">
-
+    <div>
       <input
         v-model="queryFromUser"
         class="input  input--primary  find-form__input"
@@ -10,35 +9,35 @@
         v-on:blur="inputFocus = false">
 
       <button class="btn  find-form__btn">Найти</button>
+    </div>
 
-      <div v-if="queryFromUser.length >= 3 && inputFocus"
-           class="find-form__autoselect-menu"
-           v-on:scroll="setCurrentPage($event)">
 
-        <ul class="find-form__autoselect-list">
+    <div v-show="true"
+         class="find-form__autoselect-menu"
+         v-on:scroll="setCurrentPage($event)">
 
-          <li
-            v-for="(film, index) in listFindFilms" v-bind:key="index"
-            class="find-form__autoselect-item">
+      <ul class="find-form__autoselect-list">
 
-            <a href="#" class="find-form__autoselect-info">
+        <li
+          v-for="(film, index) in listFindFilms" v-bind:key="index"
+          class="find-form__autoselect-item">
 
-              <img class="find-form__autoselect-img"
-                   v-show="film.Poster"
-                   v-bind:src="film.Poster"
-                   v-bind:atr='"img" + index'>
+          <a href="#" class="find-form__autoselect-info">
 
-              <p class="find-form__autoselect-link" href="#">{{film.Title}}</p>
+            <img class="find-form__autoselect-img"
+                 v-show="film.Poster"
+                 v-bind:src="film.Poster"
+                 v-bind:atr='"img" + index'>
 
-            </a>
+            <p class="find-form__autoselect-link" href="#">{{film.Title}}</p>
 
-          </li>
+          </a>
 
-        </ul>
+        </li>
 
-      </div>
+      </ul>
 
-    </form>
+    </div>
   </section>
 </template>
 
@@ -58,6 +57,9 @@
         allPage: 0,
         scrollElem: false,
         scrollValue: 0,
+        marginTop: 0,
+        scrollItem: 0,
+        scrollWindow: 0,
       }
     },
     watch: {
@@ -73,12 +75,12 @@
     methods: {
       setCurrentPage: function (evt) {
 
-        if(!this.$checkScrollToTop('.find-form__autoselect-menu')) return null;
-
         this.$throtling(() => {
-          this.currentPage = this.currentPage < this.allPage ? ++this.currentPage : 1;
-          console.log(this.currentPage);
-          this.getListFilm(this.queryFromUser, this.currentPage);
+            if(this.scrollWindow >= this.scrollItem.getBoundingClientRect().bottom - this.marginTop) {
+              this.currentPage = this.currentPage < this.allPage ? ++this.currentPage : 1;
+              console.log(this.currentPage);
+              this.getListFilm(this.queryFromUser, this.currentPage);
+            }
         }, 1000);
       },
 
@@ -88,6 +90,11 @@
           this.listFindFilms = this.listFindFilms.concat(data.Search);
         });
       }
+    },
+    mounted: function () {
+      this.marginTop = document.querySelector('.find-form__autoselect-menu').getBoundingClientRect().top;
+      this.scrollItem = document.querySelector('.find-form__autoselect-list');
+      this.scrollWindow = document.querySelector('.find-form__autoselect-menu').clientHeight;
     }
   }
 </script>
@@ -108,7 +115,6 @@
     &__autoselect-list {
       display: flex;
       width: 100%;
-      margin-top: 20px;
       flex-wrap: wrap;
     }
 
