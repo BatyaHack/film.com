@@ -5,7 +5,10 @@ import axios from 'axios';
 // init state
 // информация приложеия \ модуля
 const state = {
-  all: [],
+  all: {
+    filmList: {},
+    countPage: 0
+  },
   currentPage: 1,
   film: false,
 };
@@ -73,7 +76,8 @@ const actions = {
 const mutations = {
 
   [types.SET_FILM_ITEMS](state, {items}) {
-    state.all = Object.assign({}, state.all, items);
+    state.all.filmList = Object.assign({}, state.all.filmList, items.filmList);
+    state.all.countPage = items.countPage;
   },
 
   [types.INCREMENT_CURRENT_PAGE](state) {

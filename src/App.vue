@@ -19,5 +19,6 @@
 
   @import "./style/_btn.scss";
   @import "./style/_reset.scss";
+  @import "./style/_animation-route.scss";
 
 </style>

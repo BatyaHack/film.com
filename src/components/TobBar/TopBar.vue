@@ -1,3 +1,5 @@
+<!--НЕ ЗАБЫТЬ ПОУБИРАТЬ ЭТИ ТРОТРЛИНГИ ИЛИ СДЕЛАТЬ ИХ НЕ В ОДНУ СЕКУНДУ-->
+
 <template>
   <section>
     <div>
@@ -12,7 +14,7 @@
     </div>
 
 
-    <div v-show="true"
+    <div v-show="inputFocus && queryFromUser.length > 3 && listFindFilms.length > 0"
          class="find-form__autoselect-menu"
          v-on:scroll="setCurrentPage($event)">
 
@@ -21,8 +23,7 @@
         <li
           v-for="(film, index) in listFindFilms" v-bind:key="index"
           class="find-form__autoselect-item">
-
-          <a href="#" class="find-form__autoselect-info">
+          <router-link :to="{name: 'film',  params: {filmID: film.imdbID}}" class="find-form__autoselect-info">
 
             <img class="find-form__autoselect-img"
                  v-show="film.Poster"
@@ -31,10 +32,9 @@
 
             <p class="find-form__autoselect-link" href="#">{{film.Title}}</p>
 
-          </a>
+          </router-link>
 
         </li>
-
       </ul>
 
     </div>
@@ -65,6 +65,9 @@
     watch: {
       queryFromUser: function (val, oldVal) {
         this.$throtling(() => {
+          if(val.length < 3) {
+            this.listFindFilms = [];
+          }
           this.getListFilm(val);
         }, 1000);
       },
@@ -74,28 +77,33 @@
     },
     methods: {
       setCurrentPage: function (evt) {
-
         this.$throtling(() => {
-            if(this.scrollWindow >= this.scrollItem.getBoundingClientRect().bottom - this.marginTop) {
-              this.currentPage = this.currentPage < this.allPage ? ++this.currentPage : 1;
-              console.log(this.currentPage);
-              this.getListFilm(this.queryFromUser, this.currentPage);
-            }
+          // фи как длино и не красиво
+          if (this.scrollWindow.clientHeight >= this.scrollItem.getBoundingClientRect().bottom - this.marginTop.getBoundingClientRect().top) {
+            this.currentPage = this.currentPage < this.allPage ? ++this.currentPage : 1;
+            this.getListFilm(this.queryFromUser, this.currentPage);
+          }
         }, 1000);
       },
 
       getListFilm: function (partTitle, page = 1) {
-        sendRequestToListSearch(partTitle, page).then(data => {
-          this.allPage = data.totalResults;
-          this.listFindFilms = this.listFindFilms.concat(data.Search);
-        });
+        if (this.queryFromUser.length > 3) {
+          sendRequestToListSearch(partTitle, page).then(data => {
+            if (!data.Error) {
+              this.allPage = data.totalResults;
+              this.listFindFilms = this.listFindFilms.concat(data.Search);
+            } else {
+              this.listFindFilms = [];
+            }
+          });
+        }
       }
     },
     mounted: function () {
-      this.marginTop = document.querySelector('.find-form__autoselect-menu').getBoundingClientRect().top;
+      this.marginTop = document.querySelector('.find-form__autoselect-menu');
       this.scrollItem = document.querySelector('.find-form__autoselect-list');
-      this.scrollWindow = document.querySelector('.find-form__autoselect-menu').clientHeight;
-    }
+      this.scrollWindow = document.querySelector('.find-form__autoselect-menu');
+    },
   }
 </script>
 

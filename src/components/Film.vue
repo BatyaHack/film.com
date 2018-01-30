@@ -1,5 +1,5 @@
 <template>
-  <article v-if="film" class="film">
+  <article v-if="film && !load" class="film">
     <img :src="PATH_TO_IMG + film.poster" alt="film-poster">
     <h2 class="film__title">{{film.title}}</h2>
     <p class="film__year">{{film.year}}</p>
@@ -9,25 +9,26 @@
       <span>{{rating.Source}}</span>
       <span>{{rating.Value}}</span>
     </p>
-
   </article>
 </template>
 
 <script>
 
   import {mapGetters} from 'vuex';
-  import {API_MY_STATIC_PATH} from '@/config.js';
-
+  import router from '@/router'
+  import mixin from '@/mixins/mixin.js'
 
   export default {
-    props: ['filmID'],
-    created: function () {
-      this.$store.dispatch('getFilm', this.filmID);
-    },
     data() {
       return {
-        PATH_TO_IMG: API_MY_STATIC_PATH,
+        load: true,
       }
+    },
+    mixins: [mixin],
+    props: ['filmID'],
+    created: function () {
+      console.log(this.filmID);
+      this.$store.dispatch('getFilm', this.filmID);
     },
     computed: {
       ...mapGetters({
@@ -36,8 +37,17 @@
       allRatings: function () {
         return JSON.parse(this.film.ratings);
       }
+    },
+    watch: {
+      film: function () {
+        this.load = false;
+      }
+    },
+    beforeRouteUpdate (to, from, next) {
+      const partUrlID = 9;
+      this.$store.dispatch('getFilm', to.path.slice(partUrlID));
+      next();
     }
-
   }
 
 </script>

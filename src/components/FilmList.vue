@@ -2,7 +2,7 @@
   <div>
     <h1>Заголовок чего то там!!!</h1>
     <ul class="list__wrapper">
-      <li v-for="(film, index) in films" :key="index">
+      <li v-for="(film, index) in films.filmList" :key="index">
         <router-link :to="{ name: 'film', params: { filmID: film.imdbid } }" class="list__link">
 
           <div
@@ -21,29 +21,29 @@
 <script>
 
   import {mapGetters, mapMutations} from 'vuex';
-  import {API_MY_STATIC_PATH} from '@/config.js';
   import * as mutationsTypes from '@/store/mutation-types.js';
-
+  import mixin from '@/mixins/mixin.js'
 
   export default {
+    mixins: [mixin],
     data() {
       return {
-        PATH_TO_IMG: API_MY_STATIC_PATH,
         scrollItem: false,
         windowH: false,
+        countPage: 1,
       }
     },
     computed: mapGetters({
       films: 'allFilms'
     }),
     created: function () {
-      this.$store.dispatch('getAllFilms');
-
-      document.addEventListener('scroll', (evt) => {
+     this.$store.dispatch('getAllFilms');
+     document.addEventListener('scroll', (evt) => {
         this.$throtling(() => {
-          if (this.scrollItem.getBoundingClientRect().bottom < this.windowH) {
+          if (this.scrollItem.getBoundingClientRect().bottom < this.windowH && this.films.countPage > this.countPage) {
             this.$store.commit(mutationsTypes['INCREMENT_CURRENT_PAGE']);
             this.$store.dispatch('getAllFilms');
+            ++this.countPage;
           }
 
         }, 1000);
@@ -52,6 +52,10 @@
     mounted: function () {
       this.scrollItem = document.querySelector('.list__wrapper');
       this.windowH = window.innerHeight;
+    },
+    methods: {
+      showFilmList: function () {
+      }
     }
   }
 
