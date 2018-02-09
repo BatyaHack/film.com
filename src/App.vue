@@ -1,24 +1,24 @@
 <template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+  <section class="main-container">
+    <top-bar/>
+    <transition name="bounce"  mode="out-in">
+      <router-view></router-view>
+    </transition>
+  </section>
 </template>
 
 <script>
-
-  import {mapGetters} from 'vuex';
+  import TopBar from './components/TobBar/TopBar.vue'
 
   export default {
-    name: 'app',
+    name: 'App',
+    components: {
+      TopBar
+    }
   }
 </script>
 
-<!--И вот тут мы должны писать глобальные стили! А не праиться со сборкой стилей-->
-
-<style lang="scss">
-
-  @import "./style/_btn.scss";
-  @import "./style/_reset.scss";
-  @import "./style/_animation-route.scss";
+<style lang="scss" scope>
 
 </style>
+

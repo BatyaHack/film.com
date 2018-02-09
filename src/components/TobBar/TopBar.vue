@@ -1,43 +1,49 @@
 <!--НЕ ЗАБЫТЬ ПОУБИРАТЬ ЭТИ ТРОТРЛИНГИ ИЛИ СДЕЛАТЬ ИХ НЕ В ОДНУ СЕКУНДУ-->
+<!--ОЧЕНЬ ОЧЕНЬ СИЛЬНО НАТУПИЛ С ВЕРСТКОЙ НУЖНО БЫЛО РАЗБИТЬ НА БОЛЬШЕ КОМПОНЕТОВ И ПРОСТО СОБРАТЬ ВСЕ В ОДНО :с-->
 
 <template>
-  <section>
-    <div>
-      <input
-        v-model="queryFromUser"
-        class="input  input--primary  find-form__input"
-        type="text"
-        v-on:focus="inputFocus = true"
-        v-on:blur="inputFocus = false">
+  <section class="global-header">
+    <header class="top-bar  container">
 
-      <button class="btn  find-form__btn">Найти</button>
-    </div>
-
-
-    <div v-show="inputFocus && queryFromUser.length > 3 && listFindFilms.length > 0"
-         class="find-form__autoselect-menu"
-         v-on:scroll="setCurrentPage($event)">
-
-      <ul class="find-form__autoselect-list">
-
-        <li
-          v-for="(film, index) in listFindFilms" v-bind:key="index"
-          class="find-form__autoselect-item">
-          <router-link :to="{name: 'film',  params: {filmID: film.imdbID}}" class="find-form__autoselect-info">
-
-            <img class="find-form__autoselect-img"
-                 v-show="film.Poster"
-                 v-bind:src="film.Poster"
-                 v-bind:atr='"img" + index'>
-
-            <p class="find-form__autoselect-link" href="#">{{film.Title}}</p>
-
+      <section class="logo  top-bar__logo">
+        <div class="logo__wrapper">
+          <router-link to="/">
+            <img class="logo__img" src="../../assets/logo.png" alt="site-logo">
           </router-link>
+        </div>
+      </section>
 
-        </li>
-      </ul>
+      <section class="auto-select  input__wrapper  top-bar__auto-select">
+        <input
+          v-model="queryFromUser"
+          class="input  input--primary  auto-select__input"
+          type="text"
+          v-on:focus="inputFocus = true"
+          v-on:blur="inputFocus = false">
 
-    </div>
+        <div v-show="inputFocus && queryFromUser.length > 3 && listFindFilms.length > 0"
+             class="find-form__autoselect-menu"
+             v-on:scroll="setCurrentPage($event)">
+
+          <ul class="find-form__autoselect-list">
+            <li
+              v-for="(film, index) in listFindFilms" v-bind:key="index"
+              class="find-form__autoselect-item">
+              <router-link :to="{name: 'film',  params: {filmID: film.imdbID}}" class="find-form__autoselect-info">
+                <img class="find-form__autoselect-img"
+                     v-show="film.Poster"
+                     v-bind:src="film.Poster"
+                     v-bind:atr='"img" + index'>
+                <p class="find-form__autoselect-link" href="#">{{film.Title}}</p>
+              </router-link>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+
+
+    </header>
   </section>
 </template>
 
@@ -65,7 +71,7 @@
     watch: {
       queryFromUser: function (val, oldVal) {
         this.$throtling(() => {
-          if(val.length < 3) {
+          if (val.length < 3) {
             this.listFindFilms = [];
           }
           this.getListFilm(val);
@@ -107,46 +113,6 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  .find-form {
+<style lang="scss">
 
-    position: relative;
-
-    &__autoselect-menu {
-      position: absolute;
-      max-width: 500px;
-      min-width: 200px;
-      height: 400px;
-      overflow-y: scroll;
-    }
-
-    &__autoselect-list {
-      display: flex;
-      width: 100%;
-      flex-wrap: wrap;
-    }
-
-    &__autoselect-item {
-      margin-right: 20px;
-      margin-bottom: 20px;
-    }
-
-    &__autoselect-img {
-      width: 100px;
-      height: 150px;
-      object-fit: contain;
-    }
-
-    &__autoselect-info {
-      display: block;
-      max-width: 100px;
-    }
-
-    &__autoselect-link {
-      text-align: center;
-      display: block;
-      width: 100%;
-    }
-
-  }
 </style>

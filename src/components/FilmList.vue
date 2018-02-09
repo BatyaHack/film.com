@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <h1>Заголовок чего то там!!!</h1>
+  <div class="film-list  container">
     <ul class="list__wrapper">
-      <li v-for="(film, index) in films.filmList" :key="index">
+      <li v-for="(film, index) in films.filmList" :key="index" class="list__item">
         <router-link :to="{ name: 'film', params: { filmID: film.imdbid } }" class="list__link">
 
           <div
@@ -14,7 +13,6 @@
         </router-link>
       </li>
     </ul>
-    <button @click.prevent="showFilmList">Дави</button>
   </div>
 </template>
 
@@ -61,19 +59,6 @@
 
 </script>
 
-<style lang="scss" scope>
-
-  .imgBackground {
-    width: 300px;
-    height: 400px;
-    background: url(http://topfilmsapi.com/public/img/lTIwt0Af4UEmXxbACNT4bCINgatfSScb.jpg) rgb(0, 0, 0);
-    background-repeat: no-repeat;
-    background-position-y: top;
-  }
-
-  .list__link {
-    display: block;
-    cursor: pointer;
-  }
+<style lang="scss">
 
 </style>

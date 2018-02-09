@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/page/Index.vue'
 import FilmList from '@/components/FilmList.vue'
 import Film from '@/components/Film.vue'
 import {mapGetters} from 'vuex'
@@ -19,12 +18,8 @@ export default new Router({
 routes: [
     {
       path: '/',
-      component: Index,
+      component: FilmList,
       children: [
-        {
-          path: '',
-          component: FilmList,
-        },
         {
           path: '/film/:filmID',
           name: 'film',
