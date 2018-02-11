@@ -1,0 +1,8 @@
+@mixin set-pseudo ($w, $h, $background) {
+  content: "";
+  position: absolute;
+  display: block;
+  width: $w;
+  height: $h;
+  background: $background;
+}

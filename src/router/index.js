@@ -9,26 +9,20 @@ import store from '../store/index.js'
 Vue.use(Router);
 Vue.use(store);
 
-const soloFilm = {
-  template: `<h1>Один фильм</h1>`
-};
-
 
 export default new Router({
-routes: [
+  routes: [
     {
       path: '/',
       component: FilmList,
-      children: [
-        {
-          path: '/film/:filmID',
-          name: 'film',
-          component: Film,
-          props: (route) => {
-            return { filmID: route.params.filmID };
-          },
-        }
-      ]
+    },
+    {
+      path: '/film/:filmID',
+      name: 'film',
+      component: Film,
+      props: (route) => {
+        return {filmID: route.params.filmID};
+      },
     }
   ]
 })

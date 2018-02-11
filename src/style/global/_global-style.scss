@@ -1,0 +1,26 @@
+html {
+  font-size: 16px;
+
+}
+
+body {
+  font-size: 1.4rem;
+  background-color: $background-three-color;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+.global-wrapper {
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1044px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}

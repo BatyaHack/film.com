@@ -2,55 +2,69 @@
 <!--ОЧЕНЬ ОЧЕНЬ СИЛЬНО НАТУПИЛ С ВЕРСТКОЙ НУЖНО БЫЛО РАЗБИТЬ НА БОЛЬШЕ КОМПОНЕТОВ И ПРОСТО СОБРАТЬ ВСЕ В ОДНО :с-->
 
 <template>
-  <section class="global-header">
-    <header class="top-bar  container">
+  <nav class="navigation">
 
-      <section class="logo  top-bar__logo">
-        <div class="logo__wrapper">
-          <router-link to="/">
-            <img class="logo__img" src="../../assets/logo.png" alt="site-logo">
-          </router-link>
+    <div class="navigation__wrapper container">
+
+      <section class="logo  navigation__logo">
+        <div class="logo__img-wrapper">
+          <img class="logo__img" src="../../assets/logo.png" alt="pinball logo site">
         </div>
+        <h1 hidden>сайт с самыми лучшими фильмами</h1>
       </section>
 
-      <section class="auto-select  input__wrapper  top-bar__auto-select">
-        <input
-          v-model="queryFromUser"
-          class="input  input--primary  auto-select__input"
-          type="text"
-          v-on:focus="inputFocus = true"
-          v-on:blur="inputFocus = false">
+      <section class="search  navigation__search">
+        <div class="input__wrapper-icon  input__wrapper-icon--loop search__wrapper-input">
+          <input
+            v-model="queryFromUser"
+            id="searchInput"
+            class="input  input--primary  input__search"
+            type="text"
+            title="Поиск фильма"
+            v-on:focus="testFocus()"
+            v-on:blur="testFocus()">
+        </div>
+        <label for="searchInput"
+               v-show="inputFocus && queryFromUser.length > 3 && listFindFilms.length > 0"
+               class="search__frame"
+               v-on:scroll="setCurrentPage($event)">
 
-        <div v-show="inputFocus && queryFromUser.length > 3 && listFindFilms.length > 0"
-             class="find-form__autoselect-menu"
-             v-on:scroll="setCurrentPage($event)">
+          <ul class="search__list">
+            <li class="search__item"
+                v-for="(film, index) in listFindFilms" v-bind:key="index">
 
-          <ul class="find-form__autoselect-list">
-            <li
-              v-for="(film, index) in listFindFilms" v-bind:key="index"
-              class="find-form__autoselect-item">
-              <router-link :to="{name: 'film',  params: {filmID: film.imdbID}}" class="find-form__autoselect-info">
-                <img class="find-form__autoselect-img"
+              <router-link :to="{name: 'film',  params: {filmID: film.imdbID}}" class="search__autoselect-info">
+                <img class="search__autoselect-img"
                      v-show="film.Poster"
                      v-bind:src="film.Poster"
                      v-bind:atr='"img" + index'>
-                <p class="find-form__autoselect-link" href="#">{{film.Title}}</p>
+                <p class="search__autoselect-link" href="#">{{film.Title}}</p>
               </router-link>
+
             </li>
           </ul>
+        </label>
 
-        </div>
       </section>
 
+      <section class="login-block  navigation__login-block">
+        <div class="login-block__img-wrapper">
+          <img class="login-block__img" width="40px" height="40px" src="../../assets/user.jpg" alt="users photo">
+        </div>
+        <p class="login-block__user-name">Welcome John</p>
+      </section>
 
-    </header>
-  </section>
+    </div>
+
+  </nav>
 </template>
 
 <script>
 
   import * as utils from '../../utils.js'
   import {sendRequestToListSearch} from './apiRequest.js'
+
+  const magicConst = 10; // что бы немного раньше срабатывала подгрузка фильмов
 
   export default {
     name: 'TopBar',
@@ -85,7 +99,7 @@
       setCurrentPage: function (evt) {
         this.$throtling(() => {
           // фи как длино и не красиво
-          if (this.scrollWindow.clientHeight >= this.scrollItem.getBoundingClientRect().bottom - this.marginTop.getBoundingClientRect().top) {
+          if (this.scrollWindow.clientHeight >= this.scrollItem.getBoundingClientRect().bottom - this.marginTop.getBoundingClientRect().top - magicConst) {
             this.currentPage = this.currentPage < this.allPage ? ++this.currentPage : 1;
             this.getListFilm(this.queryFromUser, this.currentPage);
           }
@@ -103,12 +117,18 @@
             }
           });
         }
+      },
+
+      testFocus: function () {
+        setTimeout(()=>{
+          this.inputFocus = !this.inputFocus;
+        }, 500);
       }
     },
     mounted: function () {
-      this.marginTop = document.querySelector('.find-form__autoselect-menu');
-      this.scrollItem = document.querySelector('.find-form__autoselect-list');
-      this.scrollWindow = document.querySelector('.find-form__autoselect-menu');
+      this.marginTop = document.querySelector('.search__frame');
+      this.scrollItem = document.querySelector('.search__list');
+      this.scrollWindow = document.querySelector('.search__frame');
     },
   }
 </script>

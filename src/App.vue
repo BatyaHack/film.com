@@ -1,9 +1,15 @@
 <template>
-  <section class="main-container">
+  <section class="global-wrapper">
     <top-bar/>
-    <transition name="bounce"  mode="out-in">
-      <router-view></router-view>
-    </transition>
+
+    <main class="content">
+      <div class="content__container  container">
+        <transition name="bounce"  mode="out-in">
+          <router-view></router-view>
+        </transition>
+      </div>
+    </main>
+
   </section>
 </template>
 
@@ -18,7 +24,25 @@
   }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss">
+  @import "./style/style";
+
+  .bounce-enter-active {
+    animation: bounce-in .5s;
+  }
+  .bounce-leave-active {
+    animation: bounce-in .5s reverse;
+  }
+
+  @keyframes bounce-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
 
 </style>
 

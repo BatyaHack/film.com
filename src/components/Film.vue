@@ -27,7 +27,6 @@
     mixins: [mixin],
     props: ['filmID'],
     created: function () {
-      console.log(this.filmID);
       this.$store.dispatch('getFilm', this.filmID);
     },
     computed: {

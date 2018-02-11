@@ -1,0 +1,21 @@
+.rating {
+  &__name,
+  &__value {
+    color:$text-description-color;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+  }
+
+  &__value {
+    font-size: 1.3rem;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+    &:nth-last-child(1) {
+      margin-bottom: 0;
+    }
+  }
+}

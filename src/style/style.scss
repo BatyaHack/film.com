@@ -1,0 +1,17 @@
+//global
+@import "global/reset";
+@import "global/variables";
+@import "global/mixins";
+@import "global/global-style";
+
+
+// blocks
+@import "blocks/navigation";
+@import "blocks/input";
+@import "blocks/logo";
+@import "blocks/film-card";
+@import "blocks/search";
+@import "blocks/status-line";
+@import "blocks/login-block";
+@import "blocks/content";
+@import "blocks/rating";
