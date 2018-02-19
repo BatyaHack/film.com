@@ -13,7 +13,7 @@ class FilmController extends Controller
 {
     const URL_SITE =
         "http://www.omdbapi.com/?apikey=c585f45d&t=";
-    const COUNT_ELEM_ANSWER = 5;
+    const COUNT_ELEM_ANSWER = 10;
 
     /**
      * Ищем фильм или по заголовку или по ID фильма (который вытягиваем по регулярке)
@@ -39,11 +39,11 @@ class FilmController extends Controller
 
             if (preg_match('/tt\d{7}/', $title)) {
                 $film = $api_RequestID->getFilm($title);
-                return $film;
+                return response()->json($film);
             }
 
             $film = $api_Request->getFilm($title);
-            return $film;
+            return response()->json($film);
 
         } catch (Error $ex) {
             return response()->json([

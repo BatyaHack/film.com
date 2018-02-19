@@ -22,7 +22,6 @@ class ApiRequestID extends AbstractCreated
             return $find_filmDb;
         }
         $film_data = $this->executeApi($id);
-        dd($film_data);
         $new_film = film::create($film_data);
         return $new_film;
     }

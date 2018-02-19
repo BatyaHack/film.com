@@ -33,7 +33,9 @@ class film extends Model
     }
 
     public static function boot() {
+        // TODO отрефракторить проверку на N/A в метод!!!
         self::creating(function ($film) {
+
             $film->attributes = array_change_key_case($film->attributes);
 
             if(array_key_exists("released", ($film->attributes))) {
@@ -55,9 +57,9 @@ class film extends Model
                 $film->attributes["ratings"] = null;
             }
 
-            $film->attributes["poster_color"] = self::getImageColor(($film->attributes["poster"] ?? "./img/5TA3fnVzkuLsYY6A9gR7SUPM2lUniBZQ.jpg"), 1)[0];
+            $film->attributes["poster_color"] = self::getImageColor(($film->attributes["poster"] === "N/A" ? "./img/no_photo.jpg" : $film->attributes["poster"]), 1)[0];
 
-            $film->attributes["poster"] = self::saveImageToLocal($film->attributes["poster"] ?? "./img/5TA3fnVzkuLsYY6A9gR7SUPM2lUniBZQ.jpg");
+            $film->attributes["poster"] = self::saveImageToLocal($film->attributes["poster"] === "N/A" ? "./img/no_photo.jpg" : $film->attributes["poster"]);
             return true;
         });
     }
