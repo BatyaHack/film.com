@@ -14,6 +14,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'home',
       component: FilmList,
     },
     {
@@ -21,6 +22,7 @@ export default new Router({
       name: 'film',
       component: Film,
       props: (route) => {
+        // console.log(route.params.filmID);
         return {filmID: route.params.filmID};
       },
     }

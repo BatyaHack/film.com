@@ -7,9 +7,9 @@
     <div class="navigation__wrapper container">
 
       <section class="logo  navigation__logo">
-        <div class="logo__img-wrapper">
+        <router-link :to="{name: 'home'}" class="logo__img-wrapper">
           <img class="logo__img" src="../../assets/logo.png" alt="pinball logo site">
-        </div>
+        </router-link>
         <h1 hidden>сайт с самыми лучшими фильмами</h1>
       </section>
 

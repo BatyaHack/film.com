@@ -58,7 +58,10 @@ const actions = {
     }
 
     if(!film) {
-      axios.get(API_MY_FIND_FILM + id)
+      axios({
+        url: API_MY_FIND_FILM + id,
+        headers: {"Access-Control-Allow-Origin": "topfilmsapi.com/"},
+      })
         .then(data => {
           return data.data
         })
