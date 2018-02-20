@@ -24,7 +24,6 @@
             <h2 class="film-card__title">{{film.title}}</h2>
             <p class="film-card__type">Movies
             </p>
-            <!--TODO так же сделать "обрезание" строке до определенного колва символов через фильтр-->
             <p class="film-card__description">{{film.plot | cutFilter}}</p>
           </div>
           <footer class="film-card__footer">
@@ -47,10 +46,21 @@
 
       </router-link>
 
+
+    <section v-show="load" class="load-block">
+      <!--TODO сделать красиво через SVG-->
+      <div class="load-block__wrapper-img">
+        <img class="load-block__img" width="100px" src="../assets/loadData.gif" alt="load circle img">
+      </div>
+    </section>
+
+
   </div>
 </template>
 
 <script>
+
+
 
   import {mapGetters, mapMutations} from 'vuex';
   import * as mutationsTypes from '@/store/mutation-types.js';
@@ -64,8 +74,8 @@
         if (!message) return '';
         return JSON.parse(message)[0][key];
       },
-      cutFilter(value) {
-        const descriptionLength = 100;
+      cutFilter(value, cutSymbol = 100) {
+        const descriptionLength = cutSymbol;
         if (!value) return '';
         // TODO скорее всего можно как то короче, но и так стильно, модно, молодежно
         let cutLine = value.slice(0, descriptionLength);
@@ -80,19 +90,27 @@
         scrollItem: false,
         windowH: false,
         countPage: 1,
+        load: false,
       }
     },
-    computed: mapGetters({
-      films: 'allFilms'
-    }),
+    computed: {
+      films: function () {
+        this.load = false;
+        console.log('ss');
+        return this.$store.getters.allFilms;
+      }
+    },
     created: function () {
      this.$store.dispatch('getAllFilms');
      document.addEventListener('scroll', (evt) => {
         this.$throtling(() => {
           if (this.scrollItem.getBoundingClientRect().bottom <= this.windowH && this.films.countPage > this.countPage) {
+            this.load = true;
             this.$store.commit(mutationsTypes['INCREMENT_CURRENT_PAGE']);
             this.$store.dispatch('getAllFilms');
             ++this.countPage;
+          } else {
+            this.load = false;
           }
 
         }, 1000);

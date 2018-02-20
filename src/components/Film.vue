@@ -26,15 +26,16 @@
   import mixin from '@/mixins/mixin.js'
 
   export default {
-    data() {
-      return {
-        load: true,
-      }
-    },
+
     mixins: [mixin],
     props: ['filmID'],
     created: function () {
       this.$store.dispatch('getFilm', this.filmID);
+    },
+    data() {
+      return {
+        load: true,
+      }
     },
     computed: {
       ...mapGetters({
