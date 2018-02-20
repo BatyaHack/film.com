@@ -17,6 +17,7 @@ class film extends Model
         'Director',
         'Awards',
         'Poster',
+        'Plot',
         'imdbRating',
         'Ratings',
         'imdbID',
