@@ -25,8 +25,7 @@
             <p class="film-card__type">Movies
             </p>
             <!--TODO так же сделать "обрезание" строке до определенного колва символов через фильтр-->
-            <p class="film-card__description">Lorem Ipsum is simply dummy text of the printing & typesetting
-              industry.</p>
+            <p class="film-card__description">{{film.plot | cutFilter}}</p>
           </div>
           <footer class="film-card__footer">
             <div class="rating  film-card__rating">
@@ -64,7 +63,16 @@
       parseJson(message, key) {
         if (!message) return '';
         return JSON.parse(message)[0][key];
+      },
+      cutFilter(value) {
+        const descriptionLength = 100;
+        if (!value) return '';
+        // TODO скорее всего можно как то короче, но и так стильно, модно, молодежно
+        let cutLine = value.slice(0, descriptionLength);
+        let lastSpice = cutLine.lastIndexOf(' ') !== -1 ? cutLine.lastIndexOf(' ') : descriptionLength;
+        return value.slice(0, lastSpice) + '...';
       }
+
     },
     mixins: [mixin],
     data() {
