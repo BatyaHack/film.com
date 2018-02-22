@@ -1,0 +1,54 @@
+.film {
+  &__content {
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__poster {
+    $bar-h: 129px; // высота верхнего бара
+
+    width: 100%;
+    height: calc(100vh - #{$bar-h});
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__year,
+  &__runtime {
+    font-size: 1.2rem;
+    color: $text-three-color;
+  }
+
+  &__runtime {
+    float: right;
+  }
+
+  &__description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__ratings {
+    padding-left: 20px;
+    line-height: 1.2;
+  }
+
+  &__ratings {
+    font-size: 1.2rem;
+    color: $text-three-color;
+  }
+}
+
+@media (min-width: $tablet) {
+  .film {
+    &__content {
+      width: 50%;
+    }
+    &__poster {
+      height: 445px;
+    }
+  }
+}

@@ -3,15 +3,44 @@
   <transition name="bounce" mode="out-in">
 
     <article v-if="film && !load" class="film" ref="soloFilm">
-      <img :src="PATH_TO_IMG + film.poster" alt="film-poster">
-      <h2 class="film__title">{{film.title}}</h2>
-      <p class="film__year">{{film.year}}</p>
-      <p class="film__runtime">{{film.runtime}}</p>
-      <p class="film__imdbrating">{{film.imdbrating}}</p>
-      <p v-for="rating in allRatings" class="film__ratings">
-        <span>{{rating.Source}}</span>
-        <span>{{rating.Value}}</span>
-      </p>
+
+      <div class="film__poster" :style="{
+          backgroundImage: `url(${PATH_TO_IMG + film.poster})`,
+          backgroundColor: `#${film['poster_color']}`
+      }">
+      </div>
+
+      <div class="content__container  container">
+
+        <div class="film__content">
+          <h2 class="film__title">{{film.title}}</h2>
+
+          <span class="film__year">Year: <span>{{film.year}}</span></span>
+          <span class="film__runtime">Run-time: <span>{{film.runtime}} minutes</span></span>
+
+          <p class="film__description">{{film.plot}}</p>
+
+          <section class="film__ratings-wrapper">
+            <p class="film__label">Ratings:</p>
+
+            <ul class="film__rating-list">
+              <li class="film__ratings">
+                <span>IMDB:</span>
+                <span>{{film.imdbrating}}</span>
+              </li>
+              <li v-for="rating in allRatings" class="film__ratings">
+                <span>{{rating.Source}}</span>
+                <span>{{rating.Value}}</span>
+              </li>
+            </ul>
+
+
+          </section>
+        </div>
+
+      </div>
+
+
     </article>
 
   </transition>

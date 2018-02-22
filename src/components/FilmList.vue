@@ -1,13 +1,15 @@
 <template>
-  <div class="content__row">
-    <!--Нет смысла выносить в отдельный компонет. Почему? Потому-что
-    Хотя можно было бы. Так как роут в нутри article не очень модно и стильно-->
-    <router-link
-      v-for="(film, index) in films.filmList"
-      :key="index"
-      :to = "{ name: 'film', params: { filmID: film.imdbid }}"
-      tag="article"
-      class="film-card  film-card--small  content__film-card">
+
+  <div class="content__container  container">
+    <div class="content__row">
+      <!--Нет смысла выносить в отдельный компонет. Почему? Потому-что
+      Хотя можно было бы. Так как роут в нутри article не очень модно и стильно-->
+      <router-link
+        v-for="(film, index) in films.filmList"
+        :key="index"
+        :to = "{ name: 'film', params: { filmID: film.imdbid }}"
+        tag="article"
+        class="film-card  film-card--small  content__film-card">
 
 
         <header
@@ -47,15 +49,17 @@
       </router-link>
 
 
-    <section v-show="load" class="load-block">
-      <!--TODO сделать красиво через SVG-->
-      <div class="load-block__wrapper-img">
-        <img class="load-block__img" width="100px" src="../assets/loadData.gif" alt="load circle img">
-      </div>
-    </section>
+      <section v-show="load" class="load-block">
+        <!--TODO сделать красиво через SVG-->
+        <div class="load-block__wrapper-img">
+          <img class="load-block__img" width="100px" src="../assets/loadData.gif" alt="load circle img">
+        </div>
+      </section>
 
 
+    </div>
   </div>
+
 </template>
 
 <script>

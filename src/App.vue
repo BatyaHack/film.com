@@ -3,11 +3,11 @@
     <top-bar/>
 
     <main class="content">
-      <div class="content__container  container">
+
         <transition name="bounce"  mode="out-in">
           <router-view></router-view>
         </transition>
-      </div>
+
     </main>
 
   </section>
