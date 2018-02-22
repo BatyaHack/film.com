@@ -14,7 +14,7 @@ abstract class AbstractCreated
 
     protected function executeApi($title)
     {
-        $this->titleOrID = $this->toCorrectUrl($title);
+        $this->titleOrID = $this->toCorrectUrl($title) . '&plot=full';
         $default_settings = $this->setSettings();
         $ch = curl_init();
         curl_setopt_array($ch, $default_settings);
