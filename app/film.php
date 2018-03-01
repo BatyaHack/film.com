@@ -58,6 +58,9 @@ class film extends Model
                 $film->attributes["ratings"] = null;
             }
 
+            preg_match("/\d+/", $film->attributes["year"], $matches);
+            $film->attributes['year'] = (integer)$matches[0];
+
             $film->attributes["poster_color"] = self::getImageColor(($film->attributes["poster"] === "N/A" ? "./img/no_photo.jpg" : $film->attributes["poster"]), 1)[0];
 
             $film->attributes["poster"] = self::saveImageToLocal($film->attributes["poster"] === "N/A" ? "./img/no_photo.jpg" : $film->attributes["poster"]);
