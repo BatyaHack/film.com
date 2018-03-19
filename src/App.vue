@@ -15,12 +15,16 @@
 
 <script>
   import TopBar from './components/TobBar/TopBar.vue'
+  import initServiceWorkers from './initServiceWorkers'
 
   export default {
     name: 'App',
     components: {
       TopBar
-    }
+    },
+    created: function () {
+      // initServiceWorkers();
+    },
   }
 </script>
 

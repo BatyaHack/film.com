@@ -2,7 +2,8 @@
 // Template version: 1.2.8
 // see http://vuejs-templates.github.io/webpack for documentation.
 
-const path = require('path')
+const path = require('path');
+const fs = require('fs');
 
 module.exports = {
   dev: {
@@ -19,6 +20,9 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+    https: true,
+    // key: fs.readFileSync('./server.key'),
+    // cert: fs.readFileSync('./server.cert'),
 
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and

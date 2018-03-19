@@ -22,6 +22,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    // https: true,
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
@@ -62,7 +63,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       {
         from: path.resolve(__dirname, '../static'),
         to: config.dev.assetsSubDirectory,
-        ignore: ['.*']
+        ignore: ['.*', 'sw.js']
+      },
+      {
+        from: path.resolve(__dirname, '../static/js/sw.js'),
+        to: '',
       }
     ])
   ]

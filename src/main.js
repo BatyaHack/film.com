@@ -9,7 +9,6 @@ import VueMyUtils from './utils.js'
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 
-
 Vue.use(VueMyUtils);
 
 new Vue({
