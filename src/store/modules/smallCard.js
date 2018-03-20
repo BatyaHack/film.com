@@ -1,4 +1,5 @@
 import * as types from '../mutation-types.js';
+import connectIndexedDB from '../../MiniOrm';
 import {API_MY_LIST, API_MY_FIND_FILM} from '@/config.js';
 import axios from 'axios';
 
@@ -92,13 +93,18 @@ const actions = {
         headers: {"Access-Control-Allow-Origin": "topfilmsapi.com/"},
       })
         .then(data => {
-          console.log(self);
-          let connectDB = new self.$connectIndexedDB();
-          connectDB.connect.then((evt) => {
-            console.log(evt);
-          });
 
-          return data.data
+          if(data.data.findFlag) {
+
+            connectIndexedDB.connect
+              .then(evt => {
+                connectIndexedDB.openTransaction().put(data.data[0]);
+              });
+
+          }
+
+          debugger;
+          return data.data[0]
         })
         .then(data => {
           commit(types.SET_FILM, {film: data});

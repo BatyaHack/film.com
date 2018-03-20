@@ -1,4 +1,4 @@
-export default class MiniOrm {
+class MiniOrm {
 
   constructor(dbname = 'films', version = 1) {
     this.DBOpenRequest = window.indexedDB.open(dbname, version);
@@ -47,4 +47,16 @@ export default class MiniOrm {
 
   }
 
+  openTransaction(transactionArray = ['film'], transaction = 'film') {
+    let db = this.DBOpenRequest.result;
+    this.objectStore = db.transaction(transactionArray, 'readwrite').objectStore(transaction);
+    return this.objectStore;
+  }
+
 }
+
+let connectDB = new MiniOrm();
+
+export default connectDB;
+
+//TODO какая же параша. Бляяяя.
