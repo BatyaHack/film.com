@@ -19,11 +19,11 @@ class ApiRequestTitle extends AbstractCreated
     public function getFilm($title)
     {
         if ($find_filmDb = film::checkFilm($title)) {
-            return $find_filmDb;
+            return [$find_filmDb, 'findFlag' => false];
         }
         $film_data = $this->executeApi($title);
         $new_film = film::create($film_data);
-        return $new_film;
+        return [$new_film, 'findFlag' => true];
     }
 
 

@@ -19,10 +19,10 @@ class ApiRequestID extends AbstractCreated
     public function getFilm($id)
     {
         if ($find_filmDb = film::checkFilmById($id)) {
-            return $find_filmDb;
+            return [$find_filmDb, 'findFlag' => false];
         }
         $film_data = $this->executeApi($id);
         $new_film = film::create($film_data);
-        return $new_film;
+        return [$new_film, 'findFlag' => true];
     }
 }
