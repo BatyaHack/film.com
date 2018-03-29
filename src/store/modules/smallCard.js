@@ -103,7 +103,6 @@ const actions = {
 
           }
 
-          debugger;
           return data.data[0]
         })
         .then(data => {

@@ -1,4 +1,4 @@
-import {API_MY_STATIC_PATH} from '@/config.js';
+import { API_MY_STATIC_PATH } from '@/config.js';
 
 const myMixin = {
   data() {
