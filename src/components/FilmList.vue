@@ -35,8 +35,8 @@
                     <span class="rating__name">IMDB</span>
                     <span class="rating__value">{{film.imdbrating}}</span>
                   </li>
-
-                  <li v-for="(rating, index) in JSON.parse(film.ratings)" class="rating__item">
+                  
+                  <li v-for="(rating, index) in JSON.parse(film.ratings)" :key="index" class="rating__item">
                     <span class="rating__name">{{rating.Source}}:</span>
                     <span class="rating__value">{{rating.Value}}</span>
                   </li>

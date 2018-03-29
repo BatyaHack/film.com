@@ -50,14 +50,15 @@ const actions = {
 
   },
 
-  getFilm({commit, state}, id) {
+  getFilm({commit, state}, id, isDisabledNetwork = false) {
 
     let film = false;
     let self = this;
 
-    for (let i in state.all) {
-      if (state.all[i].imdbid === id) {
-        film = state.all[i];
+    // if(isDisabledNetwork)
+    for (let i in state.all.filmList) {
+      if (state.all.filmList[i].imdbid === id) {
+        film = state.all.filmList[i];
         commit(types.SET_FILM, {film: film});
         return null;
       }
