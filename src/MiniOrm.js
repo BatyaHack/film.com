@@ -53,6 +53,15 @@ class MiniOrm {
     return this.objectStore;
   }
 
+  getAll(successFunction) {
+    this.connect
+      .then(evt => {
+        this.openTransaction().getAll().onsuccess = function (evt) {
+          successFunction(evt);
+        }
+      });
+  }
+
 }
 
 let connectDB = new MiniOrm();

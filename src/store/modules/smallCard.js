@@ -12,28 +12,6 @@ const state = {
   },
   currentPage: 1,
   film: false,
-  disableNetwork: {
-    filmList: {
-      0: {
-        awards:"Nominated for 1 Oscar. Another 77 wins & 170 nominations.",
-        created_at:"2018-02-20 21:23:55",
-        director:"Nicolas Winding Refn",
-        id:1,
-        imdbid:"tt0780504",
-        imdbrating:7.8,
-        plot:"Лучший",
-        poster:"ag3OeKn0E5CTUNU8xW3354TvpcMIXI2A.jpg",
-        poster_color:"000000",
-        rated:"R",
-        ratings:'[{"Value": "7.8/10", "Source": "Internet Movie Database"}, {"Value": "93%", "Source": "Rotten Tomatoes"}, {"Value": "78/100", "Source": "Metacritic"}]',
-        released:"2011-09-16",
-        runtime:100,
-        title:"Drive",
-        updated_at:"2018-02-20 21:23:55",
-        year:2011,
-      }
-    },
-  }
 };
 
 // getters
@@ -47,9 +25,6 @@ const getters = {
   },
   getFilm: function (state) {
     return state.film;
-  },
-  getStaticFilm: function (state) {
-    return state.disableNetwork;
   }
 };
 
@@ -68,8 +43,9 @@ const actions = {
         commit(types.SET_FILM_ITEMS, {items: data});
       })
       .catch(err => {
-        console.log(err);
-        commit(types.SET_FILM_ITEMS, {items: state.disableNetwork});
+        connectIndexedDB.getAll(function (evt) {
+          commit(types.SET_FILM_ITEMS, {items: {filmList: evt.target.result}})
+        })
       });
 
   },
@@ -95,20 +71,29 @@ const actions = {
         .then(data => {
 
           if(data.data.findFlag) {
-
             connectIndexedDB.connect
               .then(evt => {
                 connectIndexedDB.openTransaction().put(data.data[0]);
               });
-
           }
 
           return data.data[0]
         })
+        .catch(err => {
+            if(err.message === 'Network Error') {
+              connectIndexedDB.connect
+                .then(evt => {
+                  console.log(`id = ${id}`);
+                  connectIndexedDB.openTransaction().get(id).onsuccess = function (indexedData) {
+                    commit(types.SET_FILM, {film: indexedData.target.result})
+                  };
+                });
+            }
+        })
         .then(data => {
           commit(types.SET_FILM, {film: data});
         })
-        .catch(err => console.log(err));
+        .catch(err => console.error(err.message));
     }
 
   }
