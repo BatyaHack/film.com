@@ -28,7 +28,7 @@
                 <span>IMDB:</span>
                 <span>{{film.imdbrating}}</span>
               </li>
-              <li v-for="rating in allRatings" class="film__ratings">
+              <li v-for="(rating, index) in allRatings" class="film__ratings" :key="index">
                 <span>{{rating.Source}}</span>
                 <span>{{rating.Value}}</span>
               </li>

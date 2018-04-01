@@ -23,7 +23,7 @@
       TopBar
     },
     created: function () {
-      initServiceWorkers();
+      // initServiceWorkers();
     },
   }
 </script>

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import FilmList from '@/components/FilmList.vue'
 import Film from '@/components/Film.vue'
+import Login from '@/components/auth/login.vue'
 import {mapGetters} from 'vuex'
 import store from '../store/index.js'
 
@@ -25,6 +26,11 @@ export default new Router({
         // console.log(route.params.filmID);
         return {filmID: route.params.filmID};
       },
-    }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+    },
   ]
 })
