@@ -23,7 +23,7 @@ class CreateFilmsTable extends Migration
             $table->integer('runtime')->nullable();
             // Сделать возможность жанров. Только через связные таблицы. Как то потом
             // Так же возможность актоеров через связные списки
-            $table->string('plot')->nullable();
+            $table->text('plot')->nullable();
             $table->string('director')->nullable();
             $table->string('awards')->nullable();
             $table->string('poster')->nullable();
