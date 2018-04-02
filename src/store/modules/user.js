@@ -2,6 +2,7 @@ import axios from 'axios';
 import {API_MY_BASIC_URL} from '@/config.js'
 
 const state = {
+    isLogin: false,
     user: {
         name: '',
         email: '',
@@ -12,16 +13,16 @@ const state = {
 }
 
 const getters = {
-    user: function (state) {
+    getUserLogin: function (state) {
         return state.user;
+    },
+    isUserLogin: function (state) {
+        return state.isLogin;
     }
 }
 
 const actions = {
     loginFromForm({commit, state}, {email, password}) {
-        
-        console.log(email);
-        console.log(password);
 
         axios.post(API_MY_BASIC_URL + 'login', {
             'email': email,
@@ -31,11 +32,16 @@ const actions = {
             let responseData = data.data;
 
             if(responseData.success && responseData.data.token) {
+
                 localStorage.setItem('token', responseData.data.token);
-                localStorage.setItem('tokenTime', responseData.data.tokenTime);
-                // commit('setAuthUser')
+                localStorage.setItem('liveTimeToken', (new Date).setMinutes(responseData.data.tokenTime));
+                commit('_setAuthUser', responseData.user);
+                commit('setAuthFlag', true);
+
                 /* TODO брать new Date, а потом добавлять 
                  * tokenTime и проверять каждый раз в App не вышло ли время токена */
+            } else {
+                throw new Error('User not found', 404);
             }
         })
         .catch(ex => console.log(ex.message));
@@ -44,11 +50,14 @@ const actions = {
 }
 
 const mutations = {
-    setAuthUser (state, {name, email, avatar, token}) {
-        state.name = name;
-        state.email = email;
-        state.avatar = avatar;
-        state.token = token;
+    _setAuthUser (state, {name, email, avatar, token}) {
+        state.user.name = name;
+        state.user.email = email;
+        state.user.avatar = avatar;
+        state.user.token = token;
+    },
+    setAuthFlag (state, isLogin) {
+        state.isLogin = isLogin;
     }
 }
 

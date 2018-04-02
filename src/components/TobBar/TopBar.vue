@@ -48,10 +48,17 @@
       </section>
 
       <section class="login-block  navigation__login-block">
-        <div class="login-block__img-wrapper">
-          <img class="login-block__img" width="40px" height="40px" src="../../assets/user.jpg" alt="users photo">
-        </div>
-        <p class="login-block__user-name">Welcome John</p>
+
+        <template v-if="isUserLogin">
+          <div class="login-block__img-wrapper">
+            <img class="login-block__img" width="40px" height="40px" src="../../assets/user.jpg" alt="users photo">
+          </div>
+          <p class="login-block__user-name">Welcome {{getUserLogin.name}}</p>
+        </template>
+        <template v-else>
+          <router-link :to="{name: 'login'}" class="login-block__user-name">Go Login!</router-link>
+        </template>
+
       </section>
 
     </div>
@@ -63,6 +70,7 @@
 
   import * as utils from '../../utils.js'
   import {sendRequestToListSearch} from './apiRequest.js'
+  import {mapGetters} from 'vuex'
 
   const magicConst = 10; // что бы немного раньше срабатывала подгрузка фильмов
 
@@ -81,6 +89,12 @@
         scrollItem: 0,
         scrollWindow: 0,
       }
+    },
+    computed: {
+      ...mapGetters([
+          'isUserLogin',
+          'getUserLogin',
+      ])
     },
     watch: {
       queryFromUser: function (val, oldVal) {
