@@ -24,7 +24,7 @@ const getters = {
 const actions = {
     loginFromForm({commit, state}, {email, password}) {
 
-        axios.post(API_MY_BASIC_URL + 'login', {
+        return axios.post(API_MY_BASIC_URL + 'login', {
             'email': email,
             'password': password
         })
@@ -40,9 +40,8 @@ const actions = {
 
                 /* TODO брать new Date, а потом добавлять 
                  * tokenTime и проверять каждый раз в App не вышло ли время токена */
-            } else {
-                throw new Error('User not found', 404);
-            }
+            } 
+            return data;
         })
         .catch(ex => console.log(ex.message));
 

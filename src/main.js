@@ -5,11 +5,13 @@ import App from './App'
 import router from './router'
 import store from './store/index.js'
 import VueMyUtils from './utils.js'
+import VeeValidate from 'vee-validate'
 
 Vue.config.productionTip = false;
 /* eslint-disable no-new */
 
 Vue.use(VueMyUtils);
+Vue.use(VeeValidate);
 
 new Vue({
   el: '#app',

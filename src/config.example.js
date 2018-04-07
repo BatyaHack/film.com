@@ -1,8 +1,10 @@
 // omdb config
-export const API_LIST_FIND = 'API KEY FROM OMDB';
-export const API_KEY = 'PART OF THE KEY FROM API';
+export const API_LIST_FIND = '';
+export const API_KEY = '';
 
 // myApi config
-export const API_MY_STATIC_PATH = 'http://topfilmsapi.com/public/img/';
-export const API_MY_LIST = 'http://topfilmsapi.com/api/film?p=';
-export const API_MY_FIND_FILM = 'http://topfilmsapi.com/api/film/find/';
+export const API_MY_STATIC_PATH = 'http://films.com/public/img/';
+export const API_MY_LIST = 'http://films.com./api/film?p=';
+export const API_MY_FIND_FILM = 'http://films.com/api/film/find/';
+export const API_MY_BASIC_URL = 'http://films.com/api/';
+
