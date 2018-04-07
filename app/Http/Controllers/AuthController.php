@@ -26,7 +26,7 @@ class AuthController extends Controller
         // dd($validator);
 
         if($validator->fails()) {
-            return response()->json(['success' => false, 'error' => $validator->messages()], 500);
+            return response()->json(['success' => false, 'error' => $validator->messages()]);
         }
 
         $name = $request->name;
@@ -40,7 +40,7 @@ class AuthController extends Controller
         }
         catch(Exception $ex)
         {
-            return response()->json(['success' => false, 'error' => $ex->getMessage()], 500);
+            return response()->json(['success' => false, 'error' => $ex->getMessage()]);
         }
 
         return response()->json(['success' => true, 'user' => $user]);
@@ -62,7 +62,12 @@ class AuthController extends Controller
         }
 
         $user_email = $credentials['email'];
+        $user_password = $credentials['password'];
         $user = User::where('email', $user_email)->first();
+
+        if(!Hash::check($user_password, $user->password)) {
+            return response()->json(['success' => false, 'error'=> 'User or password not found']);  
+        }
 
         try
         {
@@ -70,7 +75,7 @@ class AuthController extends Controller
         }
         catch(JWTException $ex)
         {
-            return response()->json(['success' => false, 'error'=> $ex->getMessage()], 500);            
+            return response()->json(['success' => false, 'error'=> $ex->getMessage()]);            
         }
 
         return response()->json([
@@ -93,7 +98,7 @@ class AuthController extends Controller
         }
         catch(JWTException $ex)
         {
-            return response()->json(['success' => false, 'error' => 'Failed to logout, please try again.'], 500);
+            return response()->json(['success' => false, 'error' => 'Failed to logout, please try again.']);
         }
     }
 
