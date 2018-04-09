@@ -7,6 +7,11 @@
     margin-right: 20px;
     border-radius: 50%;
   }
+  &__user-name {
+    &--secondary {
+      margin-left: 10px
+    }
+  }
 }
 
 @media (max-width: $tablet) {

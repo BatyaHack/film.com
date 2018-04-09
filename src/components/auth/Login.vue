@@ -64,13 +64,15 @@ export default {
     });
   },
   methods: {
+    /**
+     * this is Best Function
+     * @param {number} a = this is a value
+     * @param {number} b = this is a value
+     */
     checkAvailabilityUser: function() {
       this.$validator
         .validateAll({ email: this.user.email, password: this.user.password })
         .then(result => console.log(result));
-    },
-    login: function() {
-      // this.$store.dispatch('loginFromForm', this.user);
     }
   }
 };

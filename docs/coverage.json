@@ -1,0 +1,66 @@
+{
+  "coverage": "28%",
+  "expectCount": 25,
+  "actualCount": 7,
+  "files": {
+    "src/MiniOrm.js": {
+      "expectCount": 10,
+      "actualCount": 5,
+      "undocumentLines": [
+        9,
+        10,
+        12,
+        68,
+        89
+      ]
+    },
+    "src/components/TobBar/apiRequest.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/initServiceWorkers.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/mixins/mixin.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        3
+      ]
+    },
+    "src/store/modules/smallCard.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        19,
+        35,
+        105
+      ]
+    },
+    "src/store/modules/user.js": {
+      "expectCount": 4,
+      "actualCount": 0,
+      "undocumentLines": [
+        4,
+        15,
+        24,
+        51
+      ]
+    },
+    "src/store/mutation-types.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        3
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "name": "sendRequestToListSearch",
+    "filePath": "src/components/TobBar/apiRequest.js",
+    "lines": [
+      {
+        "lineNumber": 3,
+        "line": "/**"
+      },
+      {
+        "lineNumber": 4,
+        "line": " * Возвращает список фильмов. По заголовку"
+      },
+      {
+        "lineNumber": 5,
+        "line": " *"
+      },
+      {
+        "lineNumber": 6,
+        "line": " * @param {String} title"
+      },
+      {
+        "lineNumber": 7,
+        "line": " * @return {String[]} Список фильмов"
+      },
+      {
+        "lineNumber": 8,
+        "line": " */"
+      },
+      {
+        "lineNumber": 9,
+        "line": "export async function sendRequestToListSearch(title, page) {"
+      }
+    ],
+    "codeParams": [
+      "title",
+      "page"
+    ],
+    "docParams": [
+      "title"
+    ]
+  }
+]

@@ -56,7 +56,8 @@
           <p class="login-block__user-name">Welcome {{getUserLogin.name}}</p>
         </template>
         <template v-else>
-          <router-link :to="{name: 'login'}" class="login-block__user-name">Go Login!</router-link>
+          <router-link :to="{name: 'login'}" class="login-block__user-name">Login</router-link>
+          <router-link :to="{name: 'registration'}" class="login-block__user-name  login-block__user-name--secondary">Registration</router-link>
         </template>
 
       </section>

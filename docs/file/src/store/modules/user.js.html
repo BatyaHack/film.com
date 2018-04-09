@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/store/modules/user.js | films.com</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="A Vue.js project"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="films.com"><meta property="twitter:description" content="A Vue.js project"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/MiniOrm.js~MiniOrm.html">MiniOrm</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-initServiceWorkers">initServiceWorkers</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-connectDB">connectDB</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-tobbar">components/TobBar</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-sendRequestToListSearch">sendRequestToListSearch</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#mixins">mixins</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-myMixin">myMixin</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#store">store</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-INCREMENT_CURRENT_PAGE">INCREMENT_CURRENT_PAGE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SET_FILM">SET_FILM</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SET_FILM_ITEMS">SET_FILM_ITEMS</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/store/modules/user.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import axios from &apos;axios&apos;;
+import {API_MY_BASIC_URL} from &apos;@/config.js&apos;
+
+const state = {
+    isLogin: false,
+    user: {
+        name: &apos;&apos;,
+        email: &apos;&apos;,
+        avatar: &apos;&apos;,
+        token: &apos;&apos;,
+        tokenTime: &apos;&apos;,
+    }
+}
+
+const getters = {
+    getUserLogin: function (state) {
+        return state.user;
+    },
+    isUserLogin: function (state) {
+        return state.isLogin;
+    }
+}
+
+const actions = {
+    loginFromForm({commit, state}, {email, password}) {
+
+        return axios.post(API_MY_BASIC_URL + &apos;login&apos;, {
+            &apos;email&apos;: email,
+            &apos;password&apos;: password
+        })
+        .then(data =&gt; {
+            let responseData = data.data;
+
+            if(responseData.success &amp;&amp; responseData.data.token) {
+
+                localStorage.setItem(&apos;token&apos;, responseData.data.token);
+                localStorage.setItem(&apos;liveTimeToken&apos;, (new Date).setMinutes(responseData.data.tokenTime));
+                commit(&apos;_setAuthUser&apos;, responseData.user);
+                commit(&apos;setAuthFlag&apos;, true);
+
+                /* TODO &#x431;&#x440;&#x430;&#x442;&#x44C; new Date, &#x430; &#x43F;&#x43E;&#x442;&#x43E;&#x43C; &#x434;&#x43E;&#x431;&#x430;&#x432;&#x43B;&#x44F;&#x442;&#x44C; 
+                 * tokenTime &#x438; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44F;&#x442;&#x44C; &#x43A;&#x430;&#x436;&#x434;&#x44B;&#x439; &#x440;&#x430;&#x437; &#x432; App &#x43D;&#x435; &#x432;&#x44B;&#x448;&#x43B;&#x43E; &#x43B;&#x438; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x442;&#x43E;&#x43A;&#x435;&#x43D;&#x430; */
+            } 
+            return data;
+        })
+        .catch(ex =&gt; console.log(ex.message));
+
+    }
+}
+
+const mutations = {
+    _setAuthUser (state, {name, email, avatar, token}) {
+        state.user.name = name;
+        state.user.email = email;
+        state.user.avatar = avatar;
+        state.user.token = token;
+    },
+    setAuthFlag (state, isLogin) {
+        state.isLogin = isLogin;
+    }
+}
+
+export default {
+    state,
+    getters,
+    actions,
+    mutations,
+}</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

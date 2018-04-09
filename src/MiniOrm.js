@@ -1,3 +1,9 @@
+/**
+ * @access public
+ * 
+ * @example <caption>Class for indexedDB</caption>
+ * let indexOrm = new MiniOrm();
+ */
 class MiniOrm {
 
   constructor(dbname = 'films', version = 1) {
@@ -5,7 +11,10 @@ class MiniOrm {
     this._initTable();
     this.connect = this._successConnect();
   }
-
+  /**
+   * @private
+   * @todo Generate table in indexedDB
+   */
   _initTable() {
 
     this.DBOpenRequest.onupgradeneeded = function (event) {
@@ -13,8 +22,6 @@ class MiniOrm {
       var db = event.target.result;
       var objectStore = db.createObjectStore('film', {keyPath: "id"});
 
-
-      // ??? не дичь ли бля?
       objectStore.createIndex('title', 'title');
       objectStore.createIndex('year', 'year');
       objectStore.createIndex('rated', 'rated', {unique: false});
@@ -35,6 +42,10 @@ class MiniOrm {
 
   }
 
+  /**
+   * @private
+   * @return {ORMConnect} this is connect to DB
+   */
   _successConnect() {
 
     let self = this;
@@ -46,13 +57,22 @@ class MiniOrm {
     });
 
   }
-
+  /**
+   * @public
+   * @param {Array} transactionArray list table in DB 
+   * @param {string} transaction need solo table
+   * @return {objectStore} success connect
+   */
   openTransaction(transactionArray = ['film'], transaction = 'film') {
     let db = this.DBOpenRequest.result;
     this.objectStore = db.transaction(transactionArray, 'readwrite').objectStore(transaction);
     return this.objectStore;
   }
 
+  /**
+   * @public
+   * @param {Function} successFunction function for callback
+   */
   getAll(successFunction) {
     this.connect
       .then(evt => {

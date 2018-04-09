@@ -1,0 +1,1278 @@
+[
+  {
+    "__docId__": 1,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Infinity",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 2,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~NaN",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 3,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~undefined",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 4,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~null",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 5,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 6,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~object",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 7,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 8,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~function",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 9,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 10,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~boolean",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 11,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Symbol",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 12,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Error",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 13,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~EvalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 14,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~InternalError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 15,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RangeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 16,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ReferenceError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 17,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~SyntaxError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 18,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~TypeError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 19,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~URIError",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 20,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 21,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~number",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 22,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Date",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 23,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~String",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 24,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~string",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 25,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~RegExp",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 26,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 27,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 28,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 29,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint8ClampedArray",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 30,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 31,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint16Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 32,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Int32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 33,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Uint32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 34,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float32Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 35,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Float64Array",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 36,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Map",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 37,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Set",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakMap",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~WeakSet",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~ArrayBuffer",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~DataView",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~JSON",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Promise",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Generator",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~GeneratorFunction",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Reflect",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "src/.external-ecmascript.js",
+    "static": true,
+    "longname": "src/.external-ecmascript.js~Proxy",
+    "access": "public",
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "file",
+    "name": "src/MiniOrm.js",
+    "content": "/**\n * @access public\n * \n * @example <caption>Class for indexedDB</caption>\n * let indexOrm = new MiniOrm();\n */\nclass MiniOrm {\n\n  constructor(dbname = 'films', version = 1) {\n    this.DBOpenRequest = window.indexedDB.open(dbname, version);\n    this._initTable();\n    this.connect = this._successConnect();\n  }\n  /**\n   * @private\n   * @todo Generate table in indexedDB\n   */\n  _initTable() {\n\n    this.DBOpenRequest.onupgradeneeded = function (event) {\n\n      var db = event.target.result;\n      var objectStore = db.createObjectStore('film', {keyPath: \"id\"});\n\n      objectStore.createIndex('title', 'title');\n      objectStore.createIndex('year', 'year');\n      objectStore.createIndex('rated', 'rated', {unique: false});\n      objectStore.createIndex('released', 'released', {unique: false});\n      objectStore.createIndex('runtime', 'runtime', {unique: false});\n      objectStore.createIndex('plot', 'plot', {unique: false});\n      objectStore.createIndex('director', 'director', {unique: false});\n      objectStore.createIndex('awards', 'awards', {unique: false});\n      objectStore.createIndex('poster', 'poster', {unique: false});\n      objectStore.createIndex('imdbrating', 'imdbrating', {unique: false});\n      objectStore.createIndex('ratings', 'ratings', {unique: false});\n      objectStore.createIndex('imdbid', 'imdbid', {unique: false});\n      objectStore.createIndex('poster_color', 'poster_color', {unique: false});\n      objectStore.createIndex('created_at', 'created_at', {unique: false});\n      objectStore.createIndex('updated_at', 'updated_at', {unique: false});\n\n    }\n\n  }\n\n  /**\n   * @private\n   * @return {ORMConnect} this is connect to DB\n   */\n  _successConnect() {\n\n    let self = this;\n\n    return new Promise((resolve, reject) => {\n        self.DBOpenRequest.onsuccess = function (evt) {\n          resolve(evt);\n        }\n    });\n\n  }\n  /**\n   * @public\n   * @param {Array} transactionArray list table in DB \n   * @param {string} transaction need solo table\n   * @return {objectStore} success connect\n   */\n  openTransaction(transactionArray = ['film'], transaction = 'film') {\n    let db = this.DBOpenRequest.result;\n    this.objectStore = db.transaction(transactionArray, 'readwrite').objectStore(transaction);\n    return this.objectStore;\n  }\n\n  /**\n   * @public\n   * @param {Function} successFunction function for callback\n   */\n  getAll(successFunction) {\n    this.connect\n      .then(evt => {\n        this.openTransaction().getAll().onsuccess = function (evt) {\n          successFunction(evt);\n        }\n      });\n  }\n\n}\n\nlet connectDB = new MiniOrm();\n\nexport default connectDB;\n\n//TODO какая же параша. Бляяяя.\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/MiniOrm.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "MiniOrm",
+    "memberof": "src/MiniOrm.js",
+    "static": true,
+    "longname": "src/MiniOrm.js~MiniOrm",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/MiniOrm.js",
+    "importStyle": null,
+    "description": "",
+    "examples": [
+      "<caption>Class for indexedDB</caption>\nlet indexOrm = new MiniOrm();"
+    ],
+    "lineNumber": 7,
+    "pseudoExport": true,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#constructor",
+    "access": "public",
+    "description": null,
+    "lineNumber": 9,
+    "undocument": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "DBOpenRequest",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#DBOpenRequest",
+    "access": "public",
+    "description": null,
+    "lineNumber": 10,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "connect",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#connect",
+    "access": "public",
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "name": "_initTable",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#_initTable",
+    "access": "private",
+    "description": "",
+    "lineNumber": 18,
+    "todo": [
+      "Generate table in indexedDB"
+    ],
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "_successConnect",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#_successConnect",
+    "access": "private",
+    "description": "",
+    "lineNumber": 49,
+    "return": {
+      "nullable": null,
+      "types": [
+        "ORMConnect"
+      ],
+      "spread": false,
+      "description": "this is connect to DB"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "openTransaction",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#openTransaction",
+    "access": "public",
+    "description": "",
+    "lineNumber": 66,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Array"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "transactionArray",
+        "description": "list table in DB"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "transaction",
+        "description": "need solo table"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "objectStore"
+      ],
+      "spread": false,
+      "description": "success connect"
+    }
+  },
+  {
+    "__docId__": 56,
+    "kind": "member",
+    "name": "objectStore",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#objectStore",
+    "access": "public",
+    "description": null,
+    "lineNumber": 68,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 57,
+    "kind": "method",
+    "name": "getAll",
+    "memberof": "src/MiniOrm.js~MiniOrm",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/MiniOrm.js~MiniOrm#getAll",
+    "access": "public",
+    "description": "",
+    "lineNumber": 76,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "successFunction",
+        "description": "function for callback"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 58,
+    "kind": "variable",
+    "name": "connectDB",
+    "memberof": "src/MiniOrm.js",
+    "static": true,
+    "longname": "src/MiniOrm.js~connectDB",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/MiniOrm.js",
+    "importStyle": "connectDB",
+    "description": null,
+    "lineNumber": 89,
+    "undocument": true,
+    "type": {
+      "types": [
+        "src/MiniOrm.js~MiniOrm"
+      ]
+    }
+  },
+  {
+    "__docId__": 59,
+    "kind": "file",
+    "name": "src/components/TobBar/apiRequest.js",
+    "content": "import {API_LIST_FIND} from '@/config.js';\nimport axios from 'axios';\n\n/**\n * Возвращает список фильмов. По заголовку\n *\n * @param {String} title\n * @return {String[]} Список фильмов\n */\nexport async function sendRequestToListSearch(title, page) {\n\n  // Правильно ли?!\n  if (checkLengthTitle(title)) return null;\n\n  let someList = [];\n\n  return someList = await axios.get(API_LIST_FIND + title + '&page=' + page)\n    .then(data => { return data.data; })\n    .catch(data => {\n      throw data\n    });\n\n}\n\n/**\n * Прововеряем длину заголовка\n *\n * @param {String} title\n * @return {boolean}\n */\nfunction checkLengthTitle(title) {\n  const titleLength = 3;\n  return title.length < titleLength;\n}\n\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/components/TobBar/apiRequest.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "name": "sendRequestToListSearch",
+    "memberof": "src/components/TobBar/apiRequest.js",
+    "generator": false,
+    "async": true,
+    "static": true,
+    "longname": "src/components/TobBar/apiRequest.js~sendRequestToListSearch",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/components/TobBar/apiRequest.js",
+    "importStyle": "{sendRequestToListSearch}",
+    "description": "Возвращает список фильмов. По заголовку",
+    "lineNumber": 10,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "title",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "String[]"
+      ],
+      "spread": false,
+      "description": "Список фильмов"
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "function",
+    "name": "checkLengthTitle",
+    "memberof": "src/components/TobBar/apiRequest.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/components/TobBar/apiRequest.js~checkLengthTitle",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/components/TobBar/apiRequest.js",
+    "importStyle": null,
+    "description": "Прововеряем длину заголовка",
+    "lineNumber": 31,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "String"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "title",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "file",
+    "name": "src/initServiceWorkers.js",
+    "content": "export default function initServiceWorkers() {\n  if ('serviceWorker' in navigator) {\n    window.addEventListener('load', function () {\n      navigator.serviceWorker.register('sw.js').then(function (registration) {\n        console.log('ServiceWorker registration successful');\n      }, function (err) {\n        console.log('ServiceWorker registration failed: ', err);\n      });\n    });\n  }\n}\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/initServiceWorkers.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "initServiceWorkers",
+    "memberof": "src/initServiceWorkers.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/initServiceWorkers.js~initServiceWorkers",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/initServiceWorkers.js",
+    "importStyle": "initServiceWorkers",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 64,
+    "kind": "file",
+    "name": "src/mixins/mixin.js",
+    "content": "import { API_MY_STATIC_PATH } from '@/config.js';\n\nconst myMixin = {\n  data() {\n    return {\n      PATH_TO_IMG: API_MY_STATIC_PATH\n    }\n  }\n};\n\nexport default myMixin;\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/mixins/mixin.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 65,
+    "kind": "variable",
+    "name": "myMixin",
+    "memberof": "src/mixins/mixin.js",
+    "static": true,
+    "longname": "src/mixins/mixin.js~myMixin",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/mixins/mixin.js",
+    "importStyle": "myMixin",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"data\": function}"
+      ]
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "file",
+    "name": "src/router/index.js",
+    "content": "import Vue from 'vue'\nimport Router from 'vue-router'\nimport FilmList from '@/components/FilmList.vue'\nimport Film from '@/components/Film.vue'\nimport Login from '@/components/auth/login.vue'\nimport {mapGetters} from 'vuex'\nimport store from '../store/index.js'\n\n\nVue.use(Router);\nVue.use(store);\n\n\nexport default new Router({\n  routes: [\n    {\n      path: '/',\n      name: 'home',\n      component: FilmList,\n    },\n    {\n      path: '/film/:filmID',\n      name: 'film',\n      component: Film,\n      props: (route) => {\n        // console.log(route.params.filmID);\n        return {filmID: route.params.filmID};\n      },\n    },\n    {\n      path: '/login',\n      name: 'login',\n      component: Login,\n    },\n  ]\n})\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/router/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 67,
+    "kind": "file",
+    "name": "src/store/actions.js",
+    "content": "",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/store/actions.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 68,
+    "kind": "file",
+    "name": "src/store/apiRequers.js",
+    "content": "",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/store/apiRequers.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 69,
+    "kind": "file",
+    "name": "src/store/index.js",
+    "content": "import Vue from 'vue'\nimport Vuex from 'vuex'\nimport smallCard from './modules/smallCard.js'\nimport user from './modules/user.js'\nimport * as actions from './actions.js'\nimport * as mutations from './mutations.js'\n\nVue.use(Vuex);\n\n\nexport default new Vuex.Store({\n  modules: {\n    smallCard,\n    user\n  }\n})\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/store/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 70,
+    "kind": "file",
+    "name": "src/store/modules/smallCard.js",
+    "content": "import * as types from '../mutation-types.js';\nimport connectIndexedDB from '../../MiniOrm';\nimport {API_MY_LIST, API_MY_FIND_FILM} from '@/config.js';\nimport axios from 'axios';\n\n// init state\n// информация приложеия \\ модуля\nconst state = {\n  all: {\n    filmList: {},\n    countPage: 0\n  },\n  currentPage: 1,\n  film: false,\n};\n\n// getters\n// обычно используется для возвращения состояний\nconst getters = {\n  allFilms: function (state) {\n    return state.all;\n  },\n  getCurrentPage: function (state) {\n    return state.currentPage;\n  },\n  getFilm: function (state) {\n    return state.film;\n  }\n};\n\n// actions\n// используется для получения информации и так далее.\n// так как только в нем позволены асинхронные методы (обращения к api и так далее)\n// обычно делают какую то логику и вызывают mutations, что бы переписать состояния\nconst actions = {\n  getAllFilms({commit, state}) {\n\n    axios.get(API_MY_LIST + state.currentPage)\n      .then(data => {\n        return data.data\n      })\n      .then(data => {\n        commit(types.SET_FILM_ITEMS, {items: data});\n      })\n      .catch(err => {\n        connectIndexedDB.getAll(function (evt) {\n          commit(types.SET_FILM_ITEMS, {items: {filmList: evt.target.result}})\n        })\n      });\n\n  },\n\n  getFilm({commit, state}, id, isDisabledNetwork = false) {\n\n    let film = false;\n    let self = this;\n\n    // if(isDisabledNetwork)\n    for (let i in state.all.filmList) {\n      if (state.all.filmList[i].imdbid === id) {\n        film = state.all.filmList[i];\n        commit(types.SET_FILM, {film: film});\n        return null;\n      }\n    }\n\n    if(!film) {\n      axios({\n        url: API_MY_FIND_FILM + id,\n        headers: {\"Access-Control-Allow-Origin\": \"topfilmsapi.com/\"},\n      })\n        .then(data => {\n\n          if(data.data.findFlag) {\n            connectIndexedDB.connect\n              .then(evt => {\n                connectIndexedDB.openTransaction().put(data.data[0]);\n              });\n          }\n\n          return data.data[0]\n        })\n        .catch(err => {\n            if(err.message === 'Network Error') {\n              connectIndexedDB.connect\n                .then(evt => {\n                  console.log(`id = ${id}`);\n                  connectIndexedDB.openTransaction().get(id).onsuccess = function (indexedData) {\n                    commit(types.SET_FILM, {film: indexedData.target.result})\n                  };\n                });\n            }\n        })\n        .then(data => {\n          commit(types.SET_FILM, {film: data});\n        })\n        .catch(err => console.error(err.message));\n    }\n\n  }\n};\n\n// mutations\n// используется для изменения состояний. Не могуть быть асинхроными.\nconst mutations = {\n\n  [types.SET_FILM_ITEMS](state, {items}) {\n    state.all.filmList = Object.assign({}, state.all.filmList, items.filmList);\n    state.all.countPage = items.countPage;\n  },\n\n  [types.INCREMENT_CURRENT_PAGE](state) {\n    ++state.currentPage;\n  },\n\n  [types.SET_FILM](state, {film}) {\n    state.film = film;\n  }\n\n};\n\nexport default {\n  state,\n  getters,\n  actions,\n  mutations\n}\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/store/modules/smallCard.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 71,
+    "kind": "variable",
+    "name": "state",
+    "memberof": "src/store/modules/smallCard.js",
+    "static": true,
+    "longname": "src/store/modules/smallCard.js~state",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/smallCard.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 8,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"all\": *, \"currentPage\": number, \"film\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "variable",
+    "name": "getters",
+    "memberof": "src/store/modules/smallCard.js",
+    "static": true,
+    "longname": "src/store/modules/smallCard.js~getters",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/smallCard.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"allFilms\": *, \"getCurrentPage\": *, \"getFilm\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "variable",
+    "name": "actions",
+    "memberof": "src/store/modules/smallCard.js",
+    "static": true,
+    "longname": "src/store/modules/smallCard.js~actions",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/smallCard.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 35,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"getAllFilms\": function, \"getFilm\": function}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "variable",
+    "name": "mutations",
+    "memberof": "src/store/modules/smallCard.js",
+    "static": true,
+    "longname": "src/store/modules/smallCard.js~mutations",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/smallCard.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 105,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"undefined\": function}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "file",
+    "name": "src/store/modules/user.js",
+    "content": "import axios from 'axios';\nimport {API_MY_BASIC_URL} from '@/config.js'\n\nconst state = {\n    isLogin: false,\n    user: {\n        name: '',\n        email: '',\n        avatar: '',\n        token: '',\n        tokenTime: '',\n    }\n}\n\nconst getters = {\n    getUserLogin: function (state) {\n        return state.user;\n    },\n    isUserLogin: function (state) {\n        return state.isLogin;\n    }\n}\n\nconst actions = {\n    loginFromForm({commit, state}, {email, password}) {\n\n        return axios.post(API_MY_BASIC_URL + 'login', {\n            'email': email,\n            'password': password\n        })\n        .then(data => {\n            let responseData = data.data;\n\n            if(responseData.success && responseData.data.token) {\n\n                localStorage.setItem('token', responseData.data.token);\n                localStorage.setItem('liveTimeToken', (new Date).setMinutes(responseData.data.tokenTime));\n                commit('_setAuthUser', responseData.user);\n                commit('setAuthFlag', true);\n\n                /* TODO брать new Date, а потом добавлять \n                 * tokenTime и проверять каждый раз в App не вышло ли время токена */\n            } \n            return data;\n        })\n        .catch(ex => console.log(ex.message));\n\n    }\n}\n\nconst mutations = {\n    _setAuthUser (state, {name, email, avatar, token}) {\n        state.user.name = name;\n        state.user.email = email;\n        state.user.avatar = avatar;\n        state.user.token = token;\n    },\n    setAuthFlag (state, isLogin) {\n        state.isLogin = isLogin;\n    }\n}\n\nexport default {\n    state,\n    getters,\n    actions,\n    mutations,\n}",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/store/modules/user.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 76,
+    "kind": "variable",
+    "name": "state",
+    "memberof": "src/store/modules/user.js",
+    "static": true,
+    "longname": "src/store/modules/user.js~state",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/user.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"isLogin\": *, \"user\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "variable",
+    "name": "getters",
+    "memberof": "src/store/modules/user.js",
+    "static": true,
+    "longname": "src/store/modules/user.js~getters",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/user.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"getUserLogin\": *, \"isUserLogin\": *}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "variable",
+    "name": "actions",
+    "memberof": "src/store/modules/user.js",
+    "static": true,
+    "longname": "src/store/modules/user.js~actions",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/user.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"loginFromForm\": function}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "variable",
+    "name": "mutations",
+    "memberof": "src/store/modules/user.js",
+    "static": true,
+    "longname": "src/store/modules/user.js~mutations",
+    "access": "public",
+    "export": false,
+    "importPath": "films.com/src/store/modules/user.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 51,
+    "undocument": true,
+    "type": {
+      "types": [
+        "{\"_setAuthUser\": function, \"setAuthFlag\": function}"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "file",
+    "name": "src/store/mutation-types.js",
+    "content": "export const SET_FILM_ITEMS = 'SET_FILM_ITEMS';\nexport const INCREMENT_CURRENT_PAGE = 'INCREMENT_CURRENT_PAGE';\nexport const SET_FILM = 'SET_FILM';\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/store/mutation-types.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 81,
+    "kind": "variable",
+    "name": "SET_FILM_ITEMS",
+    "memberof": "src/store/mutation-types.js",
+    "static": true,
+    "longname": "src/store/mutation-types.js~SET_FILM_ITEMS",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/store/mutation-types.js",
+    "importStyle": "{SET_FILM_ITEMS}",
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 82,
+    "kind": "variable",
+    "name": "INCREMENT_CURRENT_PAGE",
+    "memberof": "src/store/mutation-types.js",
+    "static": true,
+    "longname": "src/store/mutation-types.js~INCREMENT_CURRENT_PAGE",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/store/mutation-types.js",
+    "importStyle": "{INCREMENT_CURRENT_PAGE}",
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 83,
+    "kind": "variable",
+    "name": "SET_FILM",
+    "memberof": "src/store/mutation-types.js",
+    "static": true,
+    "longname": "src/store/mutation-types.js~SET_FILM",
+    "access": "public",
+    "export": true,
+    "importPath": "films.com/src/store/mutation-types.js",
+    "importStyle": "{SET_FILM}",
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "file",
+    "name": "src/store/mutations.js",
+    "content": "import Vue from 'vue'\nimport Vuex from 'vuex'\nimport * as actions from './actions.js'\n\nVue.use(Vuex);\n\nexport default new Vuex.Store({\n\n})\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/store/mutations.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 85,
+    "kind": "file",
+    "name": "src/utils.js",
+    "content": "// Вот так выглядит плагин, если мы используем модули es6\nexport default {\n  install(Vue, options) {\n\n    Vue.prototype._throtlingFlag = '';\n\n    Vue.prototype.$throtling = function (func, time) {\n      clearTimeout(this._throtlingFlag);\n      this._throtlingFlag = setTimeout(() => func(), 1000);\n    };\n\n    Vue.prototype.$sendConsoleMessage = function (someText) {\n      console.log(someText);\n    };\n\n    Vue.prototype.$checkScrollToTop = function (elemToScroll) {\n      if (this.scrollValue < document.querySelector(elemToScroll).scrollTop) {\n        this.scrollValue = document.querySelector(elemToScroll).scrollTop;\n        return true;\n      } else {\n        return false;\n      }\n    }\n\n  }\n}\n",
+    "static": true,
+    "longname": "/home/ilya/projects/javaScript/film.com/src/utils.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "kind": "index",
+    "content": "# films.com\n\n> A Vue.js project\n\n## Build Setup\n\n``` bash\n# install dependencies\nnpm install\n\n# serve with hot reload at localhost:8080\nnpm run dev\n\n# build for production with minification\nnpm run build\n\n# build for production and view the bundle analyzer report\nnpm run build --report\n\n# run unit tests\nnpm run unit\n\n# run all tests\nnpm test\n```\n\nFor a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).\n",
+    "longname": "/home/ilya/projects/javaScript/film.com/README.md",
+    "name": "./README.md",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "packageJSON",
+    "content": "{\n  \"name\": \"films.com\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A Vue.js project\",\n  \"author\": \"BatyaHack <officalbatya@gmail.com>\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"webpack-dev-server --inline --progress --config build/webpack.dev.conf.js\",\n    \"start\": \"npm run dev\",\n    \"unit\": \"cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run\",\n    \"test\": \"npm run unit\",\n    \"lint\": \"eslint --ext .js,.vue src test/unit/specs\",\n    \"build\": \"node build/build.js\"\n  },\n  \"dependencies\": {\n    \"axios\": \"^0.17.1\",\n    \"vee-validate\": \"^2.0.6\",\n    \"vue\": \"^2.5.2\",\n    \"vue-router\": \"^3.0.1\",\n    \"vuex\": \"^3.0.1\"\n  },\n  \"devDependencies\": {\n    \"autoprefixer\": \"^7.1.2\",\n    \"babel-core\": \"^6.22.1\",\n    \"babel-eslint\": \"^7.1.1\",\n    \"babel-helper-vue-jsx-merge-props\": \"^2.0.3\",\n    \"babel-loader\": \"^7.1.1\",\n    \"babel-plugin-istanbul\": \"^4.1.1\",\n    \"babel-plugin-syntax-jsx\": \"^6.18.0\",\n    \"babel-plugin-transform-runtime\": \"^6.22.0\",\n    \"babel-plugin-transform-vue-jsx\": \"^3.5.0\",\n    \"babel-preset-env\": \"^1.3.2\",\n    \"babel-preset-stage-2\": \"^6.22.0\",\n    \"chai\": \"^4.1.2\",\n    \"chalk\": \"^2.0.1\",\n    \"copy-webpack-plugin\": \"^4.0.1\",\n    \"cross-env\": \"^5.0.1\",\n    \"css-loader\": \"^0.28.0\",\n    \"esdoc\": \"^1.0.4\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^3.19.0\",\n    \"eslint-friendly-formatter\": \"^3.0.0\",\n    \"eslint-loader\": \"^1.7.1\",\n    \"eslint-plugin-html\": \"^3.0.0\",\n    \"extract-text-webpack-plugin\": \"^3.0.0\",\n    \"file-loader\": \"^1.1.4\",\n    \"friendly-errors-webpack-plugin\": \"^1.6.1\",\n    \"html-webpack-plugin\": \"^2.30.1\",\n    \"inject-loader\": \"^3.0.0\",\n    \"karma\": \"^1.4.1\",\n    \"karma-coverage\": \"^1.1.1\",\n    \"karma-mocha\": \"^1.3.0\",\n    \"karma-phantomjs-launcher\": \"^1.0.2\",\n    \"karma-phantomjs-shim\": \"^1.4.0\",\n    \"karma-sinon-chai\": \"^1.3.1\",\n    \"karma-sourcemap-loader\": \"^0.3.7\",\n    \"karma-spec-reporter\": \"0.0.31\",\n    \"karma-webpack\": \"^2.0.2\",\n    \"mocha\": \"^3.2.0\",\n    \"node-notifier\": \"^5.1.2\",\n    \"node-sass\": \"^4.8.3\",\n    \"optimize-css-assets-webpack-plugin\": \"^3.2.0\",\n    \"ora\": \"^1.2.0\",\n    \"phantomjs-prebuilt\": \"^2.1.14\",\n    \"portfinder\": \"^1.0.13\",\n    \"postcss-import\": \"^11.0.0\",\n    \"postcss-loader\": \"^2.0.8\",\n    \"postcss-url\": \"^7.2.1\",\n    \"rimraf\": \"^2.6.0\",\n    \"sass-loader\": \"^6.0.7\",\n    \"semver\": \"^5.3.0\",\n    \"shelljs\": \"^0.7.6\",\n    \"sinon\": \"^4.0.0\",\n    \"sinon-chai\": \"^2.8.0\",\n    \"uglifyjs-webpack-plugin\": \"^1.1.1\",\n    \"url-loader\": \"^0.5.8\",\n    \"vue-loader\": \"^13.3.0\",\n    \"vue-style-loader\": \"^3.0.1\",\n    \"vue-template-compiler\": \"^2.5.2\",\n    \"webpack\": \"^3.6.0\",\n    \"webpack-bundle-analyzer\": \"^2.9.0\",\n    \"webpack-dev-server\": \"^2.9.1\",\n    \"webpack-merge\": \"^4.1.0\"\n  },\n  \"engines\": {\n    \"node\": \">= 6.0.0\",\n    \"npm\": \">= 3.0.0\"\n  },\n  \"browserslist\": [\n    \"> 1%\",\n    \"last 2 versions\",\n    \"not ie <= 8\"\n  ]\n}\n",
+    "longname": "/home/ilya/projects/javaScript/film.com/package.json",
+    "name": "package.json",
+    "static": true,
+    "access": "public"
+  }
+]

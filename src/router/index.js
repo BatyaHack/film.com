@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import FilmList from '@/components/FilmList.vue'
 import Film from '@/components/Film.vue'
-import Login from '@/components/auth/login.vue'
+import Login from '@/components/auth/Login.vue'
+import Registration from '@/components/auth/Registration.vue'
 import {mapGetters} from 'vuex'
 import store from '../store/index.js'
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login,
+    },
+    {
+      path: '/registration',
+      name: 'registration',
+      component: Registration,
     },
   ]
 })
