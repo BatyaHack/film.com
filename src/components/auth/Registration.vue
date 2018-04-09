@@ -26,7 +26,7 @@
              name="rpassword" type="password" id="rpassword">
       <span v-show="errors.has('rpassword')">{{ errors.first('rpassword') }}</span>        
 
-      <button type="submit">Login</button>        
+      <button type="submit">Registration</button>        
 
   </form>
 
@@ -70,14 +70,15 @@ export default {
   },
   methods: {
     registerNewUser: function() {
-      console.log(this.user.password, this.user.rpassword);
       this.$validator.validateAll({
         name: this.user.name,
         email: this.user.email,
-        password: this.user.password.trim(),
-        rpassword: this.user.rpassword.trim()
+        password: this.user.password,
+        rpassword: this.user.rpassword
       })
-      .then(result => console.log(result));
+      .then(result => {
+        if (result) this.$store.dispatch('registration', this.user)
+      });
     }
   }
 };

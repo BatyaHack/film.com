@@ -25,8 +25,8 @@ const actions = {
     loginFromForm({commit, state}, {email, password}) {
 
         return axios.post(API_MY_BASIC_URL + 'login', {
-            'email': email,
-            'password': password
+            email: email,
+            password: password
         })
         .then(data => {
             let responseData = data.data;
@@ -45,6 +45,17 @@ const actions = {
         })
         .catch(ex => console.log(ex.message));
 
+    },
+    registration({commit, state}, { name, email, password }) {
+
+        return axios.post(API_MY_BASIC_URL + 'register', {
+            name: name,
+            email: email,
+            password: password
+        })
+        .then(data => {
+            console.log(data.data)
+        })
     }
 }
 
