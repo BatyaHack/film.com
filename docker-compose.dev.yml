@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-dev
-    #command: npm run dev
+    command: npm run dev
     volumes:
       - .:/film-home
     ports:
