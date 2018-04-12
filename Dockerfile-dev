@@ -1,0 +1,5 @@
+FROM node:slim
+WORKDIR /film-com
+COPY . /film-com
+RUN npm install
+VOLUME /film-com/node_modules
