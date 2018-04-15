@@ -33,9 +33,9 @@ const actions = {
 
             if(responseData.success && responseData.data.token) {
 
-                localStorage.setItem('token', responseData.data.token);
+                localStorage.setItem('token', `Bearer ${responseData.data.token}`);
                 localStorage.setItem('liveTimeToken', (new Date).setMinutes(responseData.data.tokenTime));
-                commit('_setAuthUser', responseData.user);
+                commit('_setAuthUser', responseData);
                 commit('setAuthFlag', true);
 
                 /* TODO брать new Date, а потом добавлять 
@@ -56,11 +56,30 @@ const actions = {
         .then(data => {
             console.log(data.data)
         })
+    },
+    getAuthUser({commit, state}, token) {
+
+        return axios.get(API_MY_BASIC_URL + 'checkToken', {
+            headers: {
+                Authorization: token
+            }
+        })
+        .then(data => {
+            let responseData = data.data;
+            responseData.data = {
+                token: token
+            };
+            if(responseData.success) {
+                commit('_setAuthUser', responseData);
+                commit('setAuthFlag', true);
+            }
+        })
+        .catch(ex => console.log(ex))
     }
 }
 
 const mutations = {
-    _setAuthUser (state, {name, email, avatar, token}) {
+    _setAuthUser (state, { data : {token}, user : {name, email, avatar}}) {
         state.user.name = name;
         state.user.email = email;
         state.user.avatar = avatar;

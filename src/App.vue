@@ -24,6 +24,7 @@
     },
     created: function () {
       // initServiceWorkers();
+      this.$store.dispatch("getAuthUser", localStorage.getItem('token'))
     },
   }
 </script>
