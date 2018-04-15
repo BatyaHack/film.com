@@ -1,0 +1,6 @@
+FROM node:slim
+WORKDIR /film-com
+COPY . /film-com
+RUN apt-get -qq update && apt-get -qq -y install bzip2
+RUN npm install
+#VOLUME /film-com/node_modules

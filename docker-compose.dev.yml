@@ -1,0 +1,12 @@
+version: '3'
+services:
+  film-home:
+    container_name: film-home
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: npm run dev
+    volumes:
+      - .:/film-home
+    ports:
+      - 8080:8080
