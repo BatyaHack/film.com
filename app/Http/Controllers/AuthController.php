@@ -23,8 +23,6 @@ class AuthController extends Controller
 
         $validator = Validator::make($credentials, $rules);
 
-        // dd($validator);
-
         if($validator->fails()) {
             return response()->json(['success' => false, 'error' => $validator->messages()]);
         }
@@ -100,6 +98,22 @@ class AuthController extends Controller
         {
             return response()->json(['success' => false, 'error' => 'Failed to logout, please try again.']);
         }
+    }
+
+    public function isValidToken(Request $request)
+    {   
+        try
+        {            
+            $user = JWTAuth::parseToken()->toUser();
+        }
+        catch(TokenInvalidException $ex) 
+        {
+            return response()->json(['success' => false, 'error' => 'Invalid token']);
+        }
+
+        if(!$user) return response()->json(['success' => false, 'error' => 'Invalid token']);
+
+        return response()->json(['success' => true, 'user' => $user]);
     }
 
 }

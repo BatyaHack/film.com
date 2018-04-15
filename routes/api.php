@@ -28,6 +28,7 @@ Route::post('film/', 'FilmController@created');
 
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
+Route::get('checkToken', 'AuthController@isValidToken');
 
 // Auth with JWT
 Route::group(['middleware' => ['jwt.auth']], function() {
